@@ -27,6 +27,32 @@
   });
 })();
 
+// スクロール連動アニメーション: 要素が見えたらふわっと出す
+(function scrollReveal() {
+  const targets = document.querySelectorAll(
+    ".card, .reason, .work-card, .stat, .section-title, .section-lead, .profile-body, .contact-lead, .works-more"
+  );
+  if (!targets.length || !("IntersectionObserver" in window)) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-revealed");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  targets.forEach((el, i) => {
+    el.classList.add("reveal");
+    // 兄弟要素同士は少しずつ遅らせて時間差で出す
+    const siblings = el.parentElement ? [...el.parentElement.children] : [];
+    const idx = Math.max(0, siblings.indexOf(el));
+    el.style.transitionDelay = `${Math.min(idx * 0.12, 0.48)}s`;
+    observer.observe(el);
+  });
+})();
+
 // 追従CTA: ヒーローを過ぎたら表示、Contactが見えたら隠す
 (function floatingCta() {
   const cta = document.getElementById("floating-cta");

@@ -3,9 +3,12 @@
    カラーやサイズの調整は :root の変数だけ触ればOK
    ========================================================== */
 :root {
-  --accent: #2563eb;        /* アクセントカラー（1色） */
+  --accent: #2563eb;        /* メインアクセント（青） */
+  --accent2: #7c3aed;       /* サブアクセント（紫） */
   --accent-dark: #1d4ed8;
   --accent-soft: #eff6ff;
+  --grad: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  --glow: 0 8px 28px rgba(79, 70, 229, 0.35);
   --text: #1f2937;
   --muted: #6b7280;
   --bg: #ffffff;
@@ -50,9 +53,10 @@ a { color: var(--accent); text-decoration: none; }
 .btn:hover { opacity: 0.85; transform: translateY(-1px); }
 
 .btn-primary {
-  background: var(--accent);
+  background: var(--grad);
   color: #fff;
   padding: 14px 40px;
+  box-shadow: var(--glow);
 }
 .btn-large { font-size: 1.1rem; padding: 16px 48px; }
 .btn-outline {
@@ -61,10 +65,17 @@ a { color: var(--accent); text-decoration: none; }
   padding: 10px 32px;
 }
 .btn-header {
-  background: var(--accent);
+  background: var(--grad);
   color: #fff;
   padding: 8px 20px;
   font-size: 0.9rem;
+}
+
+.grad-text {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 /* ---------- ヘッダー ---------- */
@@ -106,18 +117,31 @@ a { color: var(--accent); text-decoration: none; }
 
 /* ---------- ヒーロー ---------- */
 .hero {
-  padding: calc(var(--header-h) + 88px) 0 96px;
+  position: relative;
+  overflow: hidden;
+  padding: calc(var(--header-h) + 104px) 0 128px;
   text-align: center;
+  background: url("images/hero-bg.png") center / cover no-repeat;
 }
+/* 文字の可読性を保つ薄い白オーバーレイ */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.82) 0%, rgba(255, 255, 255, 0.45) 70%, rgba(255, 255, 255, 0.1) 100%);
+}
+.hero .container { position: relative; }
 .hero-tagline {
   display: inline-block;
-  color: var(--accent);
-  background: var(--accent-soft);
+  color: #fff;
+  background: var(--grad);
   font-weight: 700;
   font-size: 0.95rem;
   padding: 6px 20px;
   border-radius: 999px;
   margin-bottom: 24px;
+  box-shadow: var(--glow);
+  animation: fade-up 0.8s ease both;
 }
 .hero-title {
   font-size: clamp(2rem, 5.5vw, 3.2rem);
@@ -125,17 +149,25 @@ a { color: var(--accent); text-decoration: none; }
   line-height: 1.4;
   letter-spacing: 0.02em;
   margin-bottom: 24px;
+  animation: fade-up 0.8s ease 0.15s both;
 }
 .hero-lead {
-  color: var(--muted);
+  color: #374151;
   font-size: 1.05rem;
   margin-bottom: 40px;
+  animation: fade-up 0.8s ease 0.3s both;
+}
+.hero .btn-large { animation: fade-up 0.8s ease 0.45s both; }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ---------- 数字の帯 ---------- */
 .stats {
-  background: var(--accent-soft);
-  padding: 48px 0;
+  background: var(--grad);
+  padding: 56px 0;
 }
 .stats-grid {
   display: grid;
@@ -144,13 +176,14 @@ a { color: var(--accent); text-decoration: none; }
   text-align: center;
 }
 .stat-number {
-  font-size: 3rem;
+  font-size: 3.2rem;
   font-weight: 900;
-  color: var(--accent);
+  color: #fff;
   line-height: 1.2;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
 }
 .stat-unit { font-size: 1.3rem; margin-left: 2px; }
-.stat-label { font-weight: 500; color: var(--text); }
+.stat-label { font-weight: 700; color: rgba(255, 255, 255, 0.92); }
 
 /* ---------- セクション共通 ---------- */
 .section { padding: 96px 0; }
@@ -166,7 +199,7 @@ a { color: var(--accent); text-decoration: none; }
   display: block;
   width: 48px;
   height: 4px;
-  background: var(--accent);
+  background: var(--grad);
   border-radius: 2px;
   margin: 16px auto 0;
 }
@@ -190,19 +223,37 @@ a { color: var(--accent); text-decoration: none; }
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 32px 28px;
+  text-align: center;
+  transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
 }
+.card:hover {
+  transform: translateY(-6px);
+  border-color: transparent;
+  box-shadow: 0 16px 40px rgba(79, 70, 229, 0.18);
+}
+.card-icon {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 16px;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+.card:hover .card-icon { transform: scale(1.08) rotate(-2deg); }
 .card h3 {
   font-size: 1.1rem;
   color: var(--accent);
   margin-bottom: 12px;
 }
-.card p { font-size: 0.95rem; color: var(--muted); }
+.card p { font-size: 0.95rem; color: var(--muted); text-align: left; }
 
 .reason { padding: 8px; }
 .reason-num {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 900;
-  color: var(--accent);
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   margin-bottom: 8px;
 }
 .reason h3 { font-size: 1.15rem; margin-bottom: 12px; }
@@ -223,16 +274,16 @@ a { color: var(--accent); text-decoration: none; }
   transition: box-shadow 0.2s, transform 0.2s;
 }
 .work-card:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(79, 70, 229, 0.18);
+  transform: translateY(-4px);
 }
 .work-tag {
   display: inline-block;
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--accent);
-  background: var(--accent-soft);
-  padding: 2px 12px;
+  color: #fff;
+  background: var(--grad);
+  padding: 2px 14px;
   border-radius: 999px;
   margin-bottom: 12px;
 }
@@ -270,7 +321,10 @@ a { color: var(--accent); text-decoration: none; }
 .sns-link:hover { border-color: var(--accent); color: var(--accent); }
 
 /* ---------- Contact ---------- */
-.contact { text-align: center; }
+.contact {
+  text-align: center;
+  background: linear-gradient(160deg, #eff6ff 0%, #f5f3ff 100%);
+}
 .contact-lead { margin-bottom: 40px; }
 .contact-note { color: var(--muted); font-size: 0.9rem; margin-top: 24px; }
 
@@ -296,12 +350,12 @@ a { color: var(--accent); text-decoration: none; }
   position: fixed;
   right: 24px;
   bottom: 24px;
-  background: var(--accent);
+  background: var(--grad);
   color: #fff;
   font-weight: 700;
   padding: 14px 32px;
   border-radius: 999px;
-  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
+  box-shadow: var(--glow);
   z-index: 90;
   opacity: 0;
   pointer-events: none;
@@ -312,8 +366,29 @@ a { color: var(--accent); text-decoration: none; }
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
+  animation: cta-pulse 2.4s ease-in-out infinite;
 }
-.floating-cta:hover { background: var(--accent-dark); }
+@keyframes cta-pulse {
+  0%, 100% { box-shadow: 0 8px 28px rgba(79, 70, 229, 0.35); }
+  50%      { box-shadow: 0 8px 36px rgba(124, 58, 237, 0.6); }
+}
+
+/* ---------- スクロール連動アニメーション ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-tagline, .hero-title, .hero-lead, .hero .btn-large { animation: none; }
+  .floating-cta.is-visible { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
 
 /* ---------- レスポンシブ ---------- */
 .sp-only { display: none; }
