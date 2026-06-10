@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- ★SEO: タイトル・説明文はここで編集 -->
-  <title>とおる｜AI活用支援とライティングのポートフォリオ</title>
-  <meta name="description" content="生成AIを現場で使える状態にするAIコンサルタント・とおるのポートフォリオ。AI活用支援、セミナー講師、ライティング、Web制作のご相談はnoteのDMからどうぞ。">
+  <title>田上徹｜AI活用支援とライティングのポートフォリオ</title>
+  <meta name="description" content="生成AIを現場で使える状態にするAIコンサルタント・田上徹（Tagami Tohru）のポートフォリオ。中小企業・個人事業主向けのAI活用支援、研修、ライティング、Web制作。初回相談は無料です。">
 
   <!-- OGP -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="とおる｜AI活用支援とライティングのポートフォリオ">
-  <meta property="og:description" content="生成AIを現場で使える状態にする。AI活用支援・セミナー講師・ライティング・Web制作のポートフォリオ。">
+  <meta property="og:title" content="田上徹｜AI活用支援とライティングのポートフォリオ">
+  <meta property="og:description" content="生成AIを、現場で使える状態に。中小企業・個人事業主向けのAI活用支援・研修・ライティング・Web制作。初回相談無料。">
   <meta property="og:url" content="https://tohru-ai.github.io/portfolio/">
   <meta property="og:image" content="https://tohru-ai.github.io/portfolio/images/ogp.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -25,8 +25,20 @@
     gtag('js', new Date());
     gtag('config', 'G-KDS57TPQ6T');
   </script>
-  <!-- ★Search Console: HTMLタグ認証を使う場合は下のコメントを外して content を差し替え -->
-  <!-- <meta name="google-site-verification" content="ここに認証コード"> -->
+  <!-- 構造化データ: 検索エンジンに「誰が何を提供するサイトか」を伝える -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "田上 徹",
+    "alternateName": "Tagami Tohru",
+    "url": "https://tohru-ai.github.io/portfolio/",
+    "image": "https://tohru-ai.github.io/portfolio/images/ogp.png",
+    "jobTitle": "AIコンサルタント・セミナー講師・ウェブライター",
+    "sameAs": ["https://note.com/tohru_ai"],
+    "knowsAbout": ["生成AI活用支援", "AI研修・セミナー", "ライティング", "Web制作"]
+  }
+  </script>
 
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 
@@ -40,15 +52,14 @@
   <!-- 固定ヘッダー -->
   <header class="site-header">
     <div class="container header-inner">
-      <!-- ★名前: 漢字フルネーム確定後に差し替え -->
-      <a href="#top" class="logo">とおる <span class="logo-en">Tohru</span></a>
+      <a href="#top" class="logo">田上 徹 <span class="logo-en">Tagami Tohru</span></a>
       <nav class="global-nav">
         <a href="#services">できること</a>
-        <a href="#reasons">選ばれる理由</a>
         <a href="#works">実績</a>
+        <a href="#flow">ご依頼の流れ</a>
         <a href="#profile">プロフィール</a>
       </nav>
-      <a href="#contact" class="btn btn-header">DMで相談</a>
+      <a href="#contact" class="btn btn-header">無料相談</a>
     </div>
   </header>
 
@@ -60,10 +71,10 @@
         <p class="hero-tagline">生成AIを"使わせる"人</p>
         <h1 class="hero-title">生成AIを、<br class="sp-only"><span class="grad-text">現場で使える状態に。</span></h1>
         <p class="hero-lead">
-          AI活用支援・セミナー講師・ライティング・Web制作。<br>
+          中小企業・個人事業主のためのAI活用支援。<br>
           「知っている」で終わらせず、あなたの業務が実際に軽くなるところまで伴走します。
         </p>
-        <a href="#contact" class="btn btn-primary btn-large">DMで相談する</a>
+        <a href="#contact" class="btn btn-primary btn-large">無料で相談してみる</a>
       </div>
     </section>
 
@@ -92,22 +103,22 @@
         <p class="section-lead">4つの領域で、個人事業主・中小企業のみなさまをサポートします。</p>
         <div class="card-grid card-grid-4">
           <div class="card">
-            <img src="images/service-ai.png" alt="" class="card-icon" loading="lazy">
+            <img src="images/service-ai.png" alt="AI活用支援・コンサルのイメージイラスト" class="card-icon" loading="lazy">
             <h3>AI活用支援・コンサル</h3>
             <p>業務の棚卸しからツール選定・プロンプト設計まで。ChatGPT・Claude などの生成AIを、あなたの業務で実際に回る形に落とし込みます。</p>
           </div>
           <div class="card">
-            <img src="images/service-seminar.png" alt="" class="card-icon" loading="lazy">
+            <img src="images/service-seminar.png" alt="AIセミナー・研修のイメージイラスト" class="card-icon" loading="lazy">
             <h3>AIセミナー・研修</h3>
             <p>100名以上参加のセミナー登壇実績。未経験の方でも「明日から使える」状態を目指す、実演中心の研修を設計・実施します。</p>
           </div>
           <div class="card">
-            <img src="images/service-writing.png" alt="" class="card-icon" loading="lazy">
+            <img src="images/service-writing.png" alt="ライティング・note執筆のイメージイラスト" class="card-icon" loading="lazy">
             <h3>ライティング・note執筆</h3>
             <p>ウェブライター歴4年。SEO記事・note記事・導入事例の執筆など、読まれて成果につながる文章を書きます。</p>
           </div>
           <div class="card">
-            <img src="images/service-dev.png" alt="" class="card-icon" loading="lazy">
+            <img src="images/service-dev.png" alt="Web制作・ツール開発のイメージイラスト" class="card-icon" loading="lazy">
             <h3>Web制作・ツール開発</h3>
             <p>ホームページ・LP制作から業務効率化ツールの開発まで。AIを活用した低コスト・短納期の制作が得意です。</p>
           </div>
@@ -144,8 +155,28 @@
       <div class="container">
         <h2 class="section-title">実績・事例</h2>
         <p class="section-lead">導入事例や登壇レポートを note で公開しています。</p>
-        <div class="works-grid" id="works-grid">
-          <!-- articles.js から main.js が描画 -->
+        <!-- 記事を増やすときは下の <a class="work-card"> ブロックを1個コピーして書き換える -->
+        <div class="works-grid">
+          <a class="work-card" href="https://note.com/tohru_ai/n/n369f552c0dbd" target="_blank" rel="noopener">
+            <span class="work-tag">導入事例</span>
+            <h3 class="work-title">接骨院の予約管理はAIエージェントで変わる。Claude Code導入実演で見えた可能性とは</h3>
+            <p class="work-desc">独立した接骨院院長へのClaude Codeコンサルティング事例。AIエージェント導入の可能性を個人事業主・経営者向けに紹介。</p>
+          </a>
+          <a class="work-card" href="https://note.com/tohru_ai/n/n525ae0a3c954" target="_blank" rel="noopener">
+            <span class="work-tag">登壇事例</span>
+            <h3 class="work-title">【登壇事例】税理士向けにNotebookLMを実演｜税制改正大綱の読み解き・資料作成・横断比較まで</h3>
+            <p class="work-desc">時間が足りない税理士業務を NotebookLM で効率化。セミナー登壇での実演内容をレポート。</p>
+          </a>
+          <a class="work-card" href="https://note.com/tohru_ai/n/nf945f84e706c" target="_blank" rel="noopener">
+            <span class="work-tag">研修事例</span>
+            <h3 class="work-title">【研修事例】"音声×AI"を現場で使える状態にする研修設計（Aqua Voice勉強会）</h3>
+            <p class="work-desc">タイピングが苦手な層でも使える、音声入力×AI活用の研修設計と導入のポイント。</p>
+          </a>
+          <a class="work-card" href="https://note.com/tohru_ai/n/n6e347a6a2849" target="_blank" rel="noopener">
+            <span class="work-tag">導入事例</span>
+            <h3 class="work-title">【生成AI導入事例】2時間のデータ入力が15分に。ChatGPTでコンビニ業界の現場を変えた実践</h3>
+            <p class="work-desc">コンビニ店長の売上データ入力をChatGPT活用で87%削減。持ち帰り業務を解消した実例。</p>
+          </a>
         </div>
         <div class="works-more">
           <a href="https://note.com/tohru_ai" target="_blank" rel="noopener" class="btn btn-outline">note で記事一覧を見る</a>
@@ -153,26 +184,83 @@
       </div>
     </section>
 
+    <!-- ご依頼の流れ -->
+    <section class="section section-soft" id="flow">
+      <div class="container">
+        <h2 class="section-title">ご依頼の流れ</h2>
+        <p class="section-lead">初回相談は<strong>無料</strong>です。「何から手を付ければいいか分からない」段階で大丈夫です。</p>
+        <div class="flow-grid">
+          <div class="flow-step">
+            <div class="flow-num">1</div>
+            <h3>無料相談</h3>
+            <p>note のDMからお気軽にどうぞ。「こんなこと頼めるかな？」の段階で構いません。</p>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">2</div>
+            <h3>ヒアリング</h3>
+            <p>オンラインで現状の業務とお困りごとを伺います。課題の整理だけでも価値が出るよう進めます。</p>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">3</div>
+            <h3>ご提案・お見積もり</h3>
+            <p>内容・期間・費用を明示してご提案します。納得いただいてから着手します。</p>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">4</div>
+            <h3>実施・伴走</h3>
+            <p>納品して終わりではなく、現場で実際に回る状態になるまで伴走します。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- プロフィール -->
-    <section class="section section-soft" id="profile">
+    <section class="section" id="profile">
       <div class="container profile-inner">
         <h2 class="section-title">プロフィール</h2>
         <!-- ★プロフィール写真: 用意でき次第 images/profile.jpg を置いて下のコメントを外す -->
         <!-- <img src="images/profile.jpg" alt="とおるのプロフィール写真" class="profile-photo"> -->
         <div class="profile-body">
-          <!-- ★名前: 漢字フルネーム確定後に差し替え -->
-          <p class="profile-name">とおる <span class="profile-name-en">/ Tohru</span></p>
+          <p class="profile-name">田上 徹 <span class="profile-name-en">/ Tagami Tohru</span></p>
           <p class="profile-role">AIコンサルタント・セミナー講師・ウェブライター</p>
           <p class="profile-story">
             ウェブライターとして4年間、読まれる文章と向き合ったのち、生成AIの可能性に出会いAIコンサルタント・セミナー講師として活動。
             5,000人在籍のAIスクールで800人以上の学習をサポートし、100名以上が参加するセミナーで講師を務める。
-            本業と育児のかたわら、副業として月10万円以上を継続して稼ぐ実践派。
+            接骨院・税理士・小売など、現場への導入支援の実例は実績セクションで公開中。
             モットーは「生成AIを"知っている"で終わらせず、現場で"使える状態"にする」。
           </p>
+          <ul class="profile-facts">
+            <li>全国オンライン対応</li>
+            <li>秘密保持に配慮（NDA締結のご相談可）</li>
+            <li>記事1本・セミナー1回など小さなご依頼から対応</li>
+          </ul>
           <div class="profile-sns">
             <a href="https://note.com/tohru_ai" target="_blank" rel="noopener" class="sns-link">note</a>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-soft" id="faq">
+      <div class="container faq-inner">
+        <h2 class="section-title">よくあるご質問</h2>
+        <details class="faq-item">
+          <summary>相談だけでも大丈夫ですか？</summary>
+          <p>大歓迎です。初回相談は無料で、「何から手を付ければいいか分からない」という段階からで構いません。</p>
+        </details>
+        <details class="faq-item">
+          <summary>対応エリアはどこまでですか？</summary>
+          <p>全国オンライン対応です。ヒアリングから納品・伴走までオンラインで完結できます。</p>
+        </details>
+        <details class="faq-item">
+          <summary>業務情報の秘密保持は守られますか？</summary>
+          <p>お預かりした業務情報の取り扱いには細心の注意を払います。必要に応じてNDA（秘密保持契約）締結のご相談も可能です。</p>
+        </details>
+        <details class="faq-item">
+          <summary>小さな依頼でもお願いできますか？</summary>
+          <p>はい。記事1本の執筆、セミナー1回の登壇、1テーマだけのAI相談など、小さな単位からお受けしています。</p>
+        </details>
       </div>
     </section>
 
@@ -182,9 +270,12 @@
         <h2 class="section-title">お仕事のご相談</h2>
         <p class="contact-lead">
           AI活用支援・セミナー登壇・執筆・制作のご依頼やご相談は、<br class="pc-only">
-          note のクリエイターページからお気軽にメッセージください。
+          note のクリエイターページからお気軽にメッセージください。<strong>初回相談は無料</strong>です。
         </p>
-        <a href="https://note.com/tohru_ai" target="_blank" rel="noopener" class="btn btn-primary btn-large">note でDM・お問い合わせ</a>
+        <a href="https://note.com/tohru_ai" target="_blank" rel="noopener" class="btn btn-primary btn-large">note のDMで無料相談する</a>
+        <!-- ★問い合わせフォーム: GoogleフォームのURLが決まったら下のコメントを外して差し替え
+        <a href="GoogleフォームのURL" target="_blank" rel="noopener" class="btn btn-outline" style="margin-left:12px">フォームで問い合わせる</a>
+        -->
         <p class="contact-note">「こんなこと頼めるかな？」の段階でも大歓迎です。</p>
       </div>
     </section>
@@ -198,17 +289,18 @@
         <a href="#services">できること</a>
         <a href="#reasons">選ばれる理由</a>
         <a href="#works">実績</a>
+        <a href="#flow">ご依頼の流れ</a>
+        <a href="#faq">FAQ</a>
         <a href="#profile">プロフィール</a>
         <a href="#contact">お問い合わせ</a>
       </nav>
-      <p class="copyright">&copy; 2026 Tohru. All rights reserved.</p>
+      <p class="copyright">&copy; 2026 Tagami Tohru. All rights reserved.</p>
     </div>
   </footer>
 
   <!-- 追従CTA -->
-  <a href="#contact" class="floating-cta" id="floating-cta">DMで相談する</a>
+  <a href="#contact" class="floating-cta" id="floating-cta">無料相談する</a>
 
-  <script src="articles.js"></script>
   <script src="main.js"></script>
 </body>
 </html>

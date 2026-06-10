@@ -22,39 +22,10 @@
   });
 })();
 
-// 実績カードの描画
-(function renderWorks() {
-  const grid = document.getElementById("works-grid");
-  if (!grid || typeof articles === "undefined") return;
-
-  articles.forEach((article) => {
-    const card = document.createElement("a");
-    card.className = "work-card";
-    card.href = article.url;
-    card.target = "_blank";
-    card.rel = "noopener";
-
-    const tag = document.createElement("span");
-    tag.className = "work-tag";
-    tag.textContent = article.tag;
-
-    const title = document.createElement("h3");
-    title.className = "work-title";
-    title.textContent = article.title;
-
-    const desc = document.createElement("p");
-    desc.className = "work-desc";
-    desc.textContent = article.description;
-
-    card.append(tag, title, desc);
-    grid.appendChild(card);
-  });
-})();
-
 // スクロール連動アニメーション: 要素が見えたらふわっと出す
 (function scrollReveal() {
   const targets = document.querySelectorAll(
-    ".card, .reason, .work-card, .stat, .section-title, .section-lead, .profile-body, .contact-lead, .works-more"
+    ".card, .reason, .work-card, .stat, .flow-step, .faq-item, .section-title, .section-lead, .profile-body, .contact-lead, .works-more"
   );
   if (!targets.length || !("IntersectionObserver" in window)) return;
 

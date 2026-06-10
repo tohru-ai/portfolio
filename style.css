@@ -320,6 +320,73 @@ a { color: var(--accent); text-decoration: none; }
 }
 .sns-link:hover { border-color: var(--accent); color: var(--accent); }
 
+/* ---------- ご依頼の流れ ---------- */
+.flow-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.flow-step {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  text-align: center;
+}
+.flow-num {
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: var(--grad);
+  color: #fff;
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+.flow-step h3 { font-size: 1.05rem; margin-bottom: 8px; }
+.flow-step p { font-size: 0.9rem; color: var(--muted); text-align: left; }
+
+/* ---------- FAQ ---------- */
+.faq-inner { max-width: 720px; }
+.faq-item {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-bottom: 16px;
+}
+.faq-item summary {
+  font-weight: 700;
+  cursor: pointer;
+  list-style-position: inside;
+}
+.faq-item summary:hover { color: var(--accent); }
+.faq-item p {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ---------- プロフィール補足 ---------- */
+.profile-facts {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.profile-facts li {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 6px 16px;
+  border-radius: 999px;
+}
+
 /* ---------- Contact ---------- */
 .contact {
   text-align: center;
@@ -409,7 +476,8 @@ a { color: var(--accent); text-decoration: none; }
 
   .card-grid-4,
   .card-grid-3,
-  .works-grid { grid-template-columns: 1fr; }
+  .works-grid,
+  .flow-grid { grid-template-columns: 1fr; }
 
   /* スマホは画面下の固定バーにする */
   .floating-cta {
@@ -420,5 +488,6 @@ a { color: var(--accent); text-decoration: none; }
     text-align: center;
     padding: 16px;
   }
-  body { padding-bottom: 0; }
+  /* 下部固定CTAがフッターを覆わないよう余白を確保 */
+  body { padding-bottom: 64px; }
 }
