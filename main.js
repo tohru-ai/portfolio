@@ -1,3 +1,38 @@
+// GA4: 測定IDが設定されている場合のみ読み込み、CTAクリックを計測する
+(function analytics() {
+  const id = window.GA_MEASUREMENT_ID;
+  if (!id) return;
+
+  const s = document.createElement("script");
+  s.async = true;
+  s.src = `https://www.googletagmanager.com/gtag/js?id=${id}`;
+  document.head.appendChild(s);
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag("js", new Date());
+  gtag("config", id);
+
+  // クリック計測: note への外部リンク（コンバージョン相当）と内部CTAボタン
+  document.addEventListener("click", (e) => {
+    const link = e.target.closest("a");
+    if (!link) return;
+    if (link.href.includes("note.com")) {
+      gtag("event", "note_outbound", {
+        link_text: link.textContent.trim(),
+        link_url: link.href,
+        transport_type: "beacon",
+      });
+    } else if (link.matches(".btn, .floating-cta")) {
+      gtag("event", "cta_click", {
+        link_text: link.textContent.trim(),
+        transport_type: "beacon",
+      });
+    }
+  });
+})();
+
 // 実績カードの描画
 (function renderWorks() {
   const grid = document.getElementById("works-grid");
