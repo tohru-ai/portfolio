@@ -1,18 +1,7 @@
-// GA4: 測定IDが設定されている場合のみ読み込み、CTAクリックを計測する
+// GA4 クリック計測: gtag は index.html の <head> で定義済み
 (function analytics() {
-  const id = window.GA_MEASUREMENT_ID;
-  if (!id) return;
-
-  const s = document.createElement("script");
-  s.async = true;
-  s.src = `https://www.googletagmanager.com/gtag/js?id=${id}`;
-  document.head.appendChild(s);
-
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  window.gtag = gtag;
-  gtag("js", new Date());
-  gtag("config", id);
+  if (typeof window.gtag !== "function") return;
+  const gtag = window.gtag;
 
   // クリック計測: note への外部リンク（コンバージョン相当）と内部CTAボタン
   document.addEventListener("click", (e) => {
