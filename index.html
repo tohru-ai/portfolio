@@ -41,7 +41,12 @@
       "url": "https://fineupai.jp/"
     },
     "sameAs": ["https://note.com/tohru_ai"],
-    "knowsAbout": ["生成AI活用支援", "AI研修・セミナー", "ライティング", "Web制作"]
+    "knowsAbout": ["生成AI活用支援", "AI研修・セミナー", "ライティング", "Web制作", "LP制作"],
+    "makesOffer": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "LP・ホームページ制作"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI活用支援・研修"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "ライティング・note執筆"}}
+    ]
   }
   </script>
 
@@ -61,8 +66,8 @@
       <nav class="global-nav">
         <a href="#services">できること</a>
         <a href="#works">実績</a>
+        <a href="#pricing">料金</a>
         <a href="#company">所属</a>
-        <a href="#flow">ご依頼の流れ</a>
         <a href="#profile">プロフィール</a>
       </nav>
       <a href="#contact" class="btn btn-header">無料相談</a>
@@ -73,6 +78,7 @@
 
     <!-- トップキャッチ -->
     <section class="hero">
+      <canvas class="wind-canvas" aria-hidden="true"></canvas>
       <div class="container hero-inner">
         <p class="hero-tagline"><span class="hero-tagline__text">生成AIを"使わせる"人</span></p>
         <h1 class="hero-title">
@@ -88,6 +94,7 @@
           <a href="#works" class="text-link">実績を見る</a>
         </div>
         <p class="hero-credit" lang="en">in association with Fine&nbsp;Up&nbsp;AI</p>
+        <p class="hero-generative-note">この画面の風も、コードで描いています。</p>
       </div>
     </section>
 
@@ -183,8 +190,25 @@
         <header class="chapter" data-reveal>
           <p class="chapter-no" lang="en">03 / Works</p>
           <h2 class="chapter-title">実績・事例</h2>
-          <p class="chapter-lead">導入事例や登壇レポートを note で公開しています。</p>
+          <p class="chapter-lead">制作例と、導入事例・登壇レポート（note）を公開しています。</p>
         </header>
+        <div class="work-feature" data-reveal>
+          <p class="work-feature-label" lang="en">Case 01 / This Site</p>
+          <div class="work-feature-inner">
+            <figure class="work-feature-figure">
+              <img src="images/work-portfolio.webp" alt="このポートフォリオサイトのファーストビュー" width="1440" height="900" loading="lazy">
+            </figure>
+            <div class="work-feature-body">
+              <h3>このポートフォリオサイト</h3>
+              <p class="work-feature-desc">成果設計（CTA導線・計測）× エディトリアルデザイン × ジェネラティブ演出。企画・デザイン・実装・SEO・計測まで一人で担当しています。</p>
+              <ul class="work-feature-specs">
+                <li>HTML / CSS / JavaScript のみ・外部ライブラリ 0</li>
+                <li>GA4 イベント計測・構造化データ・sitemap 実装済み</li>
+                <li>ヒーローの風はコードによる自前描画（2D canvas）</li>
+              </ul>
+            </div>
+          </div>
+        </div>
         <!-- 記事を増やすときは下の <a class="work-item"> ブロックを1個コピーして書き換える -->
         <div class="work-list">
           <a class="work-item" href="https://note.com/tohru_ai/n/n369f552c0dbd" target="_blank" rel="noopener" data-reveal>
@@ -247,11 +271,54 @@
       </div>
     </section>
 
+    <!-- 料金の目安 -->
+    <section class="section section-white" id="pricing">
+      <div class="container">
+        <header class="chapter" data-reveal>
+          <p class="chapter-no" lang="en">05 / Pricing</p>
+          <h2 class="chapter-title">料金の目安</h2>
+          <p class="chapter-lead">表示は目安です。内容に応じてお見積もりします。まずは無料相談からどうぞ。</p>
+        </header>
+        <!-- ★仮数字・公開前に要確認 -->
+        <div class="price-grid">
+          <div class="price-plan" data-reveal>
+            <h3 class="price-name">AI活用支援・研修</h3>
+            <p class="price-amount"><span class="price-value" lang="en">50,000</span><span class="price-unit">円〜</span></p>
+            <ul class="price-includes">
+              <li>業務ヒアリング・活用領域の整理</li>
+              <li>実演中心の研修（1回〜）</li>
+              <li>導入後のフォローアップ</li>
+            </ul>
+          </div>
+          <div class="price-plan price-plan--featured" data-reveal>
+            <p class="price-flag">おすすめ</p>
+            <h3 class="price-name">LP制作</h3>
+            <p class="price-amount"><span class="price-value" lang="en">80,000</span><span class="price-unit">円〜</span></p>
+            <ul class="price-includes">
+              <li>構成・原稿（ライティング）込み</li>
+              <li>スマホ対応・GA4計測設定込み</li>
+              <li>公開後の軽微修正 1回</li>
+            </ul>
+          </div>
+          <div class="price-plan" data-reveal>
+            <h3 class="price-name">ホームページ制作（〜5ページ）</h3>
+            <p class="price-amount"><span class="price-value" lang="en">150,000</span><span class="price-unit">円〜</span></p>
+            <ul class="price-includes">
+              <li>サイト設計・原稿・デザイン込み</li>
+              <li>SEO基本設定・お問い合わせフォーム</li>
+              <li>更新方法のレクチャー付き</li>
+            </ul>
+          </div>
+        </div>
+        <p class="pricing-note" data-reveal>記事1本・相談1回などの小さなご依頼も歓迎です。<a href="#contact" class="text-link">お問い合わせ</a>から気軽にご相談ください。</p>
+      </div>
+    </section>
+
     <!-- ご依頼の流れ -->
     <section class="section" id="flow">
       <div class="container">
         <header class="chapter" data-reveal>
-          <p class="chapter-no" lang="en">05 / Flow</p>
+          <p class="chapter-no" lang="en">06 / Flow</p>
           <h2 class="chapter-title">ご依頼の流れ</h2>
           <p class="chapter-lead">初回相談は<strong>無料</strong>です。「何から手を付ければいいか分からない」段階で大丈夫です。</p>
         </header>
@@ -284,7 +351,7 @@
     <section class="section section-white" id="profile">
       <div class="container">
         <header class="chapter" data-reveal>
-          <p class="chapter-no" lang="en">06 / Profile</p>
+          <p class="chapter-no" lang="en">07 / Profile</p>
           <h2 class="chapter-title">プロフィール</h2>
         </header>
         <div class="profile-inner">
@@ -320,7 +387,7 @@
     <section class="section" id="faq">
       <div class="container faq-inner">
         <header class="chapter" data-reveal>
-          <p class="chapter-no" lang="en">07 / FAQ</p>
+          <p class="chapter-no" lang="en">08 / FAQ</p>
           <h2 class="chapter-title">よくあるご質問</h2>
         </header>
         <details class="faq-item" data-reveal>
@@ -348,22 +415,54 @@
 
     <!-- Contact -->
     <section class="section contact" id="contact">
-      <div class="container">
+      <canvas class="wind-canvas wind-canvas--ink" aria-hidden="true"></canvas>
+      <div class="container contact-inner">
         <header class="chapter" data-reveal>
-          <p class="chapter-no" lang="en">08 / Contact</p>
+          <p class="chapter-no" lang="en">09 / Contact</p>
           <h2 class="chapter-title contact-title">まず、話してみませんか。</h2>
         </header>
         <p class="contact-lead" data-reveal>
           AI活用支援・セミナー登壇・執筆・制作のご依頼やご相談は、<br class="pc-only">
-          note のクリエイターページからお気軽にメッセージください。<strong>初回相談は無料</strong>です。
+          下のフォームからお気軽にどうぞ。<strong>初回相談は無料</strong>です。
         </p>
-        <div class="contact-actions" data-reveal>
-          <a href="https://note.com/tohru_ai" target="_blank" rel="noopener" class="btn btn-primary btn-large">note のDMで無料相談する</a>
-          <!-- ★問い合わせフォーム: GoogleフォームのURLが決まったら下のコメントを外して差し替え
-          <a href="GoogleフォームのURL" target="_blank" rel="noopener" class="btn btn-outline">フォームで問い合わせる</a>
-          -->
-        </div>
-        <p class="contact-note" data-reveal>「こんなこと頼めるかな？」の段階でも大歓迎です。</p>
+        <form class="contact-form" id="contact-form" method="POST" action="https://formspree.io/f/mvzjyvwg" data-reveal>
+          <div class="form-field">
+            <label for="cf-name">お名前 <span class="form-required">必須</span></label>
+            <input type="text" id="cf-name" name="name" autocomplete="name" required>
+            <p class="form-error" id="err-name" role="status"></p>
+          </div>
+          <div class="form-field">
+            <label for="cf-email">メールアドレス <span class="form-required">必須</span></label>
+            <input type="email" id="cf-email" name="email" autocomplete="email" required>
+            <p class="form-error" id="err-email" role="status"></p>
+          </div>
+          <div class="form-field">
+            <label for="cf-type">ご相談の種類</label>
+            <select id="cf-type" name="ご相談の種類">
+              <option>LP・ホームページ制作</option>
+              <option>AI活用支援・研修</option>
+              <option>執筆</option>
+              <option>その他</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="cf-message">ご相談内容 <span class="form-required">必須</span></label>
+            <textarea id="cf-message" name="message" rows="6" required placeholder="「こんなこと頼めるかな？」の段階でも大歓迎です"></textarea>
+            <p class="form-error" id="err-message" role="status"></p>
+          </div>
+          <div class="visually-hidden" aria-hidden="true">
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+          <input type="hidden" name="_subject" value="ポートフォリオサイトからのお問い合わせ">
+          <p class="form-alert" id="form-alert" role="alert"></p>
+          <div class="contact-actions">
+            <button type="submit" class="btn btn-primary btn-large">送信する</button>
+          </div>
+          <p class="form-privacy">送信内容は<a href="privacy.html" class="text-link">プライバシーポリシー</a>に基づき取り扱います。</p>
+        </form>
+        <p class="contact-note" data-reveal>
+          <a href="https://note.com/tohru_ai" target="_blank" rel="noopener" class="text-link">note のDM</a>でも受け付けています。
+        </p>
       </div>
     </section>
 
@@ -376,11 +475,13 @@
         <a href="#services">できること</a>
         <a href="#reasons">選ばれる理由</a>
         <a href="#works">実績</a>
+        <a href="#pricing">料金</a>
         <a href="#company">所属</a>
         <a href="#flow">ご依頼の流れ</a>
         <a href="#faq">FAQ</a>
         <a href="#profile">プロフィール</a>
         <a href="#contact">お問い合わせ</a>
+        <a href="privacy.html">プライバシーポリシー</a>
       </nav>
       <p class="footer-company"><a href="https://fineupai.jp/" target="_blank" rel="noopener" class="text-link">株式会社Fine Up AI</a></p>
       <p class="copyright">&copy; 2026 Tagami Tohru. All rights reserved.</p>
