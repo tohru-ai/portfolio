@@ -1135,7 +1135,7 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
 
 .privacy-body { max-width: var(--w-narrow); }
 
-.privacy-body h3 {
+.privacy-body h2 {
   font-family: var(--font-serif);
   font-weight: 600;
   font-size: 1.15rem;
