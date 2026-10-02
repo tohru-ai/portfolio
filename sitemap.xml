@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://tohru-ai.github.io/portfolio/</loc>
-    <lastmod>2026-07-07</lastmod>
-  </url>
-  <url>
-    <loc>https://tohru-ai.github.io/portfolio/privacy.html</loc>
-    <lastmod>2026-07-07</lastmod>
-  </url>
+  <url><loc>https://tohru-ai.github.io/portfolio/about.html</loc></url>
+  <url><loc>https://tohru-ai.github.io/portfolio/blog/ai-kenshu-teichaku.html</loc></url>
+  <url><loc>https://tohru-ai.github.io/portfolio/blog/chatgpt-gyomu-kouritsuka.html</loc></url>
+  <url><loc>https://tohru-ai.github.io/portfolio/blog/seikotsuin-ai.html</loc></url>
+  <url><loc>https://tohru-ai.github.io/portfolio/company.html</loc></url>
+  <url><loc>https://tohru-ai.github.io/portfolio/contact.html</loc></url>
+  <url><loc>https://tohru-ai.github.io/portfolio/faq.html</loc></url>
+  <url><loc>https://tohru-ai.github.io/portfolio/</loc></url>
+  <url><loc>https://tohru-ai.github.io/portfolio/news.html</loc></url>
+  <url><loc>https://tohru-ai.github.io/portfolio/privacy.html</loc></url>
+  <url><loc>https://tohru-ai.github.io/portfolio/service-ai-consulting.html</loc></url>
+  <url><loc>https://tohru-ai.github.io/portfolio/service-ai-training.html</loc></url>
+  <url><loc>https://tohru-ai.github.io/portfolio/service-web.html</loc></url>
+  <url><loc>https://tohru-ai.github.io/portfolio/service-writing.html</loc></url>
+  <url><loc>https://tohru-ai.github.io/portfolio/service.html</loc></url>
 </urlset>

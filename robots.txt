@@ -1,4 +1,3 @@
 User-agent: *
-Allow: /
-
+Allow: /portfolio/
 Sitemap: https://tohru-ai.github.io/portfolio/sitemap.xml

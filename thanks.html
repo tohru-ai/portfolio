@@ -1,76 +1,174 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>送信ありがとうございました｜田上徹</title>
-  <meta name="description" content="お問い合わせありがとうございました。">
-  <meta name="robots" content="noindex">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KDS57TPQ6T"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-KDS57TPQ6T');
-    // フォーム送信経由のときだけCV計測(直アクセス・リロードは数えない)
-    try {
-      if (sessionStorage.getItem('lead_ok') === '1') {
-        sessionStorage.removeItem('lead_ok');
-        gtag('event', 'generate_lead', { method: 'contact_form' });
-      }
-    } catch (e) {}
-  </script>
-
-  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>送信が完了しました｜田上徹</title>
+<meta name="description" content="お問い合わせを受け付けました。">
+<meta name="robots" content="noindex">
+<script>/* GA4：公開URLで開いたときだけ読み込む（手元の確認で本番の計測を汚さない） */if(location.hostname==='tohru-ai.github.io'){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-KDS57TPQ6T';document.head.appendChild(s);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag('js',new Date());gtag('config','G-KDS57TPQ6T');}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Shippori+Mincho:wght@500;600;700;800&family=Space+Grotesk:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/_shared.css">
+<style>.c-pagehero h1{word-break:auto-phrase;text-wrap:pretty}@media (max-width:768px){.c-pagehero h1{font-size:30px}.c-pagehero p{font-size:15px}}</style>
+<script>document.documentElement.className+=" j";</script>
+<!-- ZOROYA:SEO -->
+<link rel="canonical" href="https://tohru-ai.github.io/portfolio/thanks.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="送信が完了しました｜田上徹">
+<meta property="og:description" content="お問い合わせを受け付けました。">
+<meta property="og:url" content="https://tohru-ai.github.io/portfolio/thanks.html">
+<meta property="og:site_name" content="田上 徹">
+<meta property="og:image" content="https://tohru-ai.github.io/portfolio/src/ogp.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="送信が完了しました｜田上徹">
+<meta name="twitter:description" content="お問い合わせを受け付けました。">
+<meta name="twitter:image" content="https://tohru-ai.github.io/portfolio/src/ogp.jpg">
+<link rel="icon" type="image/png" href="src/favicon.png">
+<link rel="apple-touch-icon" href="src/apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": ["Organization", "LocalBusiness"], "name": "田上 徹", "url": "https://tohru-ai.github.io/portfolio/", "description": "田上徹は、中小企業と個人事業主の業務に生成AIを組み込む支援を、研修・執筆・Web制作まで一人で行うAIコンサルタントです（株式会社Fine Up AI 所属）。", "logo": "https://tohru-ai.github.io/portfolio/src/logo.png", "areaServed": "全国（オンライン）"}, {"@type": "WebSite", "name": "田上 徹", "url": "https://tohru-ai.github.io/portfolio/"}]}
+</script>
+<!-- /ZOROYA:SEO -->
 </head>
 <body>
-
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo">田上 徹 <span class="logo-en">Tagami Tohru</span></a>
-      <a href="index.html" class="btn btn-header">トップへ戻る</a>
+<a class="skip-link" href="#main">本文へスキップ</a>
+<!-- ZOROYA:HEADER -->
+<header class="c-header">
+  <div class="c-header__in">
+    <a class="c-logo" href="index.html">
+      <picture><source type="image/webp" srcset="src/logo-mark.webp"><img class="c-logo__mark" src="src/logo-mark.png" alt="" width="46" height="18" loading="eager" decoding="async" fetchpriority="high"></picture>
+      <span class="c-logo__name">田上 徹<span class="c-logo__en">Tagami Tohru</span></span>
+    </a>
+    <nav class="c-nav" aria-label="メインメニュー">
+      <ul class="c-nav__list">
+        <li class="c-nav__item">
+          <button class="c-nav__link" type="button" data-mega-toggle aria-expanded="false" aria-controls="mega-service">できること<span class="c-nav__caret" aria-hidden="true"></span></button>
+          <div class="c-mega" id="mega-service">
+            <div class="c-mega__intro">
+              <b>小さな事業者の<br>業務1つから</b>
+              <p>相談・研修・執筆・制作。いまの困りごとに合う形で支援します。</p>
+              <a href="service.html">できること一覧を見る →</a>
+            </div>
+            <ul class="c-mega__list">
+              <li><a href="service-ai-consulting.html"><span class="c-mega__no">01</span><span class="c-mega__t">AI活用支援・コンサル</span><span class="c-mega__p">50,000円〜</span></a></li>
+              <li><a href="service-ai-training.html"><span class="c-mega__no">02</span><span class="c-mega__t">AIセミナー・研修</span><span class="c-mega__p">50,000円〜</span></a></li>
+              <li><a href="service-writing.html"><span class="c-mega__no">03</span><span class="c-mega__t">ライティング・note執筆</span><span class="c-mega__p">10,000円〜</span></a></li>
+              <li><a href="service-web.html"><span class="c-mega__no">04</span><span class="c-mega__t">Web制作・ツール開発</span><span class="c-mega__p">80,000円〜</span></a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="c-nav__item"><a class="c-nav__link" href="index.html#works">実績</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="index.html#pricing">料金</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="about.html">私について</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="faq.html">よくある質問</a></li>
+        <li class="c-nav__item"><a class="c-nav__link" href="news.html">コラム</a></li>
+      </ul>
+      <a class="btn btn--primary c-header__cta" href="contact.html" data-cta="header">無料で相談する</a>
+      <button class="c-burger" type="button" data-drawer-open aria-expanded="false" aria-controls="drawer" aria-label="メニューを開く"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+<div class="c-drawer" id="drawer" data-drawer aria-hidden="true">
+  <div class="c-drawer__bg" data-drawer-close></div>
+  <div class="c-drawer__panel" role="dialog" aria-modal="true" aria-label="メニュー">
+    <div class="c-drawer__head">
+      <a class="c-logo" href="index.html"><span class="c-logo__name">田上 徹<span class="c-logo__en">Tagami Tohru</span></span></a>
+      <button class="c-drawer__close" type="button" data-drawer-close aria-label="メニューを閉じる">×</button>
     </div>
-  </header>
+    <ul class="c-drawer__nav">
+      <li><a href="index.html">トップ</a></li>
+      <li>
+        <button class="c-drawer__acc" type="button" aria-expanded="false">できること<span aria-hidden="true">＋</span></button>
+        <div class="c-drawer__sub"><div>
+          <a href="service.html">できること一覧</a>
+          <a href="service-ai-consulting.html">AI活用支援・コンサル</a>
+          <a href="service-ai-training.html">AIセミナー・研修</a>
+          <a href="service-writing.html">ライティング・note執筆</a>
+          <a href="service-web.html">Web制作・ツール開発</a>
+        </div></div>
+      </li>
+      <li><a href="index.html#works">実績</a></li>
+      <li><a href="index.html#pricing">料金</a></li>
+      <li><a href="about.html">私について</a></li>
+      <li><a href="company.html">事業者情報</a></li>
+      <li><a href="faq.html">よくある質問</a></li>
+      <li><a href="news.html">コラム</a></li>
+    </ul>
+    <div class="c-drawer__foot"><a class="btn btn--primary" href="contact.html" data-cta="drawer">無料で相談する</a></div>
+  </div>
+</div>
+<!-- /ZOROYA:HEADER -->
 
-  <main class="subpage-main">
-    <section class="section">
-      <div class="container">
-        <header class="chapter" data-reveal>
-          <p class="chapter-no" lang="en">Thank You</p>
-          <h1 class="chapter-title">送信ありがとうございました。</h1>
-        </header>
-        <p class="contact-lead" data-reveal>
-          お問い合わせを受け付けました。内容を確認のうえ、<strong>1〜2営業日以内</strong>にメールでご返信します。
-        </p>
-        <div class="contact-actions" data-reveal>
-          <a href="index.html" class="btn btn-primary">トップページへ戻る</a>
-        </div>
+<!-- ZOROYA:MAIN -->
+<main id="main">
+<section class="c-pagehero" aria-labelledby="page-title">
+  <div class="c-pagehero__bg" aria-hidden="true"></div>
+  <div class="l-wrap">
+    <ol class="c-crumb" aria-label="パンくずリスト"><li><a href="index.html">ホーム</a></li><li aria-current="page">送信が完了しました</li></ol>
+    <span class="u-eyebrow">Thank you</span>
+    <h1 id="page-title">送信が完了しました</h1>
+    <p>お問い合わせを受け付けました。</p>
+  </div>
+</section>
+<section class="c-block" aria-labelledby="th-title">
+  <div class="l-wrap" style="max-width:760px;text-align:center">
+    <h2 class="u-h2" id="th-title">ご相談ありがとうございます</h2>
+    <p class="u-lead" style="margin-left:auto;margin-right:auto">内容を確認して、私から直接メールでお返事します。数日たっても返信が届かない場合は、迷惑メールフォルダをご確認ください。</p>
+    <p style="margin-top:32px"><a class="btn btn--primary" href="index.html">トップへ戻る</a></p>
+  </div>
+</section>
+<script>try{if(sessionStorage.getItem('lead_ok')){sessionStorage.removeItem('lead_ok');}}catch(e){}</script>
+</main>
+<!-- /ZOROYA:MAIN -->
+
+<!-- ZOROYA:FOOTER -->
+<footer class="c-footer">
+  <div class="l-wrap">
+    <div class="c-footer__top">
+      <div>
+        <a class="c-logo" href="index.html"><picture><source type="image/webp" srcset="src/logo-mark.webp"><img class="c-logo__mark" src="src/logo-mark.png" alt="" width="46" height="18" loading="lazy" decoding="async"></picture><span class="c-logo__name">田上 徹<span class="c-logo__en">Tagami Tohru</span></span></a>
+        <p class="c-footer__desc">田上徹は、中小企業と個人事業主の業務に生成AIを組み込む支援を、研修・執筆・Web制作まで一人で行うAIコンサルタントです。</p>
+        <a class="btn btn--light c-footer__cta" href="contact.html" data-cta="footer">無料で相談する</a>
       </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <nav class="footer-nav">
-        <a href="index.html#services">できること</a>
-        <a href="index.html#works">実績</a>
-        <a href="index.html#pricing">料金</a>
-        <a href="index.html#company">所属</a>
-        <a href="index.html#profile">プロフィール</a>
-        <a href="privacy.html">プライバシーポリシー</a>
-      </nav>
-      <p class="copyright">&copy; 2026 Tagami Tohru. All rights reserved.</p>
+      <div>
+        <p class="c-footer__h">Menu</p>
+        <ul class="c-footer__links">
+          <li><a href="service.html">できること</a></li>
+          <li><a href="service-ai-consulting.html">AI活用支援・コンサル</a></li>
+          <li><a href="service-ai-training.html">AIセミナー・研修</a></li>
+          <li><a href="service-writing.html">ライティング・note執筆</a></li>
+          <li><a href="service-web.html">Web制作・ツール開発</a></li>
+          <li><a href="about.html">私について</a></li>
+          <li><a href="company.html">事業者情報</a></li>
+          <li><a href="faq.html">よくある質問</a></li>
+          <li><a href="news.html">AI活用コラム</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="c-footer__h">Information</p>
+        <dl class="c-footer__nap">
+          <dt>名前</dt><dd>田上 徹（AIコンサルタント）</dd>
+          <dt>所属</dt><dd><a href="https://fineupai.jp/" target="_blank" rel="noopener">株式会社Fine Up AI</a></dd>
+          <dt>エリア</dt><dd>全国（オンライン）</dd>
+          <dt>連絡</dt><dd><a href="contact.html">お問い合わせフォーム</a></dd>
+          <dt>note</dt><dd><a href="https://note.com/tohru_ai" target="_blank" rel="noopener">note.com/tohru_ai</a></dd>
+        </dl>
+      </div>
     </div>
-  </footer>
+    <div class="c-footer__bottom">
+      <span>© 2026 Tagami Tohru</span>
+      <a href="privacy.html">プライバシーポリシー</a>
+    </div>
+  </div>
+</footer>
+<!-- /ZOROYA:FOOTER -->
 
-  <script src="main.js"></script>
+<script src="assets/js/app.js" defer></script>
 </body>
 </html>
