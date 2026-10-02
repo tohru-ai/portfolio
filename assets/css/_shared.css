@@ -269,6 +269,32 @@ body.is-locked{overflow:hidden}
 .c-works__more{margin-top:36px;display:flex;justify-content:flex-end}
 
 /* ============================================================
+   ⑥-2 お客様の声（sec-voice-14 移植：余白の三聲。4件のため2列）
+   ============================================================ */
+.c-voice{position:relative;padding:116px 0 128px;background:var(--paper);overflow:hidden}
+.c-voice::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(30,58,95,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(30,58,95,.045) 1px,transparent 1px);background-size:36px 36px;-webkit-mask-image:radial-gradient(ellipse at 50% 40%,#000 30%,transparent 75%);mask-image:radial-gradient(ellipse at 50% 40%,#000 30%,transparent 75%);pointer-events:none}
+.c-voice__head{max-width:640px;margin:0 auto;text-align:center}
+.c-voice__head .u-lead{margin-left:auto;margin-right:auto}
+.c-voice__rule{width:56px;height:2px;background:var(--accent);margin:24px auto 0}
+.c-voice__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:52px}
+.c-voice__card{margin:0;background:#fff;border:1px solid var(--line);border-radius:2px;padding:30px 30px 24px;display:flex;flex-direction:column}
+.c-voice__q{font-family:var(--f-en);font-size:56px;line-height:1;color:var(--accent);display:block;height:30px}
+.c-voice__quote{margin:14px 0 0;flex:1;font-family:var(--f-serif);font-size:18px;line-height:1.9;color:var(--ink)}
+.c-voice__quote p{margin:0 0 .5em}
+.c-voice__foot{display:flex;align-items:center;gap:14px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.c-voice__avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;flex:none}
+.c-voice__name{display:block;font-weight:700;font-size:14px;line-height:1.5}
+.c-voice__attr{display:block;font-size:12px;color:var(--muted);line-height:1.6}
+.c-voice__attr a{color:var(--main);font-weight:700}
+.c-voice__note{text-align:center;color:var(--muted);font-size:12px;margin:36px 0 0}
+@media (max-width:768px){
+  .c-voice{padding:72px 0}
+  .c-voice__grid{grid-template-columns:1fr;margin-top:36px;gap:16px}
+  .c-voice__card{padding:24px 22px 20px}
+  .c-voice__quote{font-size:16px}
+}
+
+/* ============================================================
    ⑦ プロフィール（sec-message-03 移植：マガジン見開き）
    ============================================================ */
 .c-message{padding:128px 0 140px;background:var(--sub) url("../../src/section-bg-3.jpg") center/cover no-repeat;position:relative;overflow:hidden}
