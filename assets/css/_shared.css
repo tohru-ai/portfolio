@@ -118,6 +118,7 @@ body.is-locked{overflow:hidden}
 .hero__eyebrow::before{content:"";width:28px;height:1px;background:var(--accent)}
 .hero h1{font-family:var(--f-serif);font-weight:700;font-size:clamp(30px,4.1vw,56px);line-height:1.38;margin:20px 0 0;letter-spacing:.02em;color:#fff}
 .hero h1 .hero__line{display:block;white-space:nowrap}
+.hero h1 .hero__eyebrow{display:flex;margin:0 0 22px;font-family:var(--f-num),var(--f-sans);font-weight:500;line-height:1.6;letter-spacing:.2em}
 .hero h1 em{font-style:normal;color:#E7B08F}
 .hero__sub{font-size:clamp(15px,1.3vw,17px);color:var(--on-dark-soft);margin:22px 0 0;max-width:30em;line-height:1.95}
 .hero__ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
@@ -549,6 +550,7 @@ html:not(.j) .c-faq__a{grid-template-rows:1fr}
   .btn{white-space:normal;text-align:center}
 }
 @media (max-width:420px){
+  .hero__eyebrow-name{display:none}
   .hero h1{font-size:32px}
   .hero__ctas .btn{width:100%}
   .c-cta__actions .btn{width:100%}
