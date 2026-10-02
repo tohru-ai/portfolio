@@ -12,16 +12,20 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Shippori+Mincho:wght@500;600;700;800&family=Space+Grotesk:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Shippori+Mincho:wght@500;600;700;800&family=Space+Grotesk:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"></noscript>
   <style>
 /* ============================================================
-   田上 徹｜共通デザインシステム（B型：上品・洗練）
-   地 #F4F5F2 / 墨 #1C1F22 / 深藍 #1E3A5F / 淡藍 #DDE3E8 / 銅 #B4643C
+   田上 徹｜共通デザインシステム（2026-10-02 改：見本45×見本10のトンマナ）
+   白 #FFFFFF / 淡青 #F4F7FA / 生成り #F6F1E9 / 濃紺 #10233F / 水色 #0F7FA0・#35C3E8 / 金 #E7B75F
    見出し Shippori Mincho＋Cormorant Garamond / 本文 Zen Kaku Gothic New / 数字 Space Grotesk
    ============================================================ */
 :root{
-  --bg:#F4F5F2; --paper:#FBFBF9; --white:#FFFFFF;
-  --ink:#1C1F22; --muted:#5B636B; --note:#7A828A;
-  --main:#1E3A5F; --main-deep:#12283A; --sub:#DDE3E8; --line:#D3DAE0;
-  --accent:#A65832; --accent-ink:#8E4A28;
-  --on-dark:#F2F4F5; --on-dark-soft:rgba(242,244,245,.74);
+  --bg:#FFFFFF; --paper:#FFFFFF; --white:#FFFFFF; --cream:#F6F1E9; --cream-deep:#EEE6D9;
+  --ink:#17202A; --muted:#5B6B7D; --note:#7D8A98;
+  --main:#10233F; --main-deep:#0A1526; --sub:#F4F7FA; --line:#E2E9F0;
+  --accent:#0F7FA0; --accent-ink:#0B6A86; --accent-bright:#35C3E8; --accent-soft:#E4F4FA;
+  --gold:#E7B75F; --gold-deep:#CF9C3D; --gold-soft:#FAF3E3;
+  --on-dark:#F4F7FA; --on-dark-soft:rgba(244,247,250,.76);
+  --r-sm:10px; --r-md:16px; --r-lg:28px;
+  --shadow-1:0 1px 2px rgba(16,35,63,.05),0 4px 12px rgba(16,35,63,.06);
+  --shadow-2:0 2px 4px rgba(16,35,63,.05),0 12px 32px rgba(16,35,63,.10);
   --f-serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
   --f-en:"Cormorant Garamond",Georgia,serif;
   --f-sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
@@ -49,9 +53,9 @@ h1,h2,h3,.lead,.btn,summary{word-break:auto-phrase;text-wrap:pretty}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
 /* ---------- ボタン ---------- */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;padding:0 30px;border-radius:2px;font-family:var(--f-sans);font-weight:700;font-size:15px;letter-spacing:.06em;text-decoration:none;transition:background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease),transform .3s var(--ease);white-space:nowrap}
-.btn--primary{background:var(--main);color:#fff;border:1px solid var(--main)}
-.btn--primary:hover{background:var(--accent);border-color:var(--accent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;padding:0 30px;border-radius:999px;font-family:var(--f-sans);font-weight:700;font-size:15px;letter-spacing:.06em;text-decoration:none;transition:background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease),transform .3s var(--ease);white-space:nowrap}
+.btn--primary{background:var(--gold);color:var(--main);border:1px solid var(--gold);box-shadow:0 8px 20px -10px rgba(207,156,61,.7)}
+.btn--primary:hover{background:var(--gold-deep);border-color:var(--gold-deep);color:#fff}
 .btn--ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
 .btn--ghost:hover{background:var(--ink);color:#fff}
 .btn--light{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.6)}
@@ -69,7 +73,7 @@ h1,h2,h3,.lead,.btn,summary{word-break:auto-phrase;text-wrap:pretty}
    ヘッダー（header-01 型：透明→スクロールで白）＋ PCドロップダウン（megamenu-03 型）
    ============================================================ */
 .c-header{position:fixed;inset:0 0 auto 0;z-index:100;height:var(--header-h);transition:background .35s var(--ease),box-shadow .35s var(--ease),color .35s var(--ease);color:#fff}
-.c-header.is-solid,.c-header--solid{background:rgba(251,251,249,.96);color:var(--ink);box-shadow:0 1px 0 var(--line);backdrop-filter:saturate(1.2) blur(8px)}
+.c-header.is-solid,.c-header--solid{background:rgba(255,255,255,.96);color:var(--ink);box-shadow:0 1px 0 var(--line);backdrop-filter:saturate(1.2) blur(8px)}
 .c-header__in{height:100%;width:min(1320px,calc(100% - 40px));margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .c-logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;flex:none}
 .c-logo__mark{width:46px;height:auto;object-fit:contain;transition:filter .35s}
@@ -84,8 +88,9 @@ h1,h2,h3,.lead,.btn,summary{word-break:auto-phrase;text-wrap:pretty}
 .c-nav__caret{width:8px;height:8px;border-right:1.4px solid currentColor;border-bottom:1.4px solid currentColor;transform:rotate(45deg) translateY(-3px);transition:transform .3s var(--ease)}
 .c-nav__item.is-open .c-nav__caret{transform:rotate(225deg) translateY(-1px)}
 .c-header__cta{margin-left:10px;min-height:44px;padding:0 20px;font-size:14px}
-.c-header:not(.is-solid):not(.c-header--solid) .c-header__cta{background:#fff;color:var(--main-deep);border-color:#fff}
-.c-mega{position:absolute;top:calc(100% + 14px);left:50%;width:min(760px,92vw);transform:translate(-50%,8px);opacity:0;visibility:hidden;transition:opacity .3s var(--ease),transform .3s var(--ease),visibility .3s;background:var(--paper);color:var(--ink);border:1px solid var(--line);box-shadow:0 30px 60px -30px rgba(18,40,58,.35);padding:26px 28px 22px;display:grid;grid-template-columns:200px 1fr;gap:28px}
+.c-header__cta{background:var(--main);color:#fff;border-color:var(--main);box-shadow:none}
+.c-header:not(.is-solid):not(.c-header--solid) .c-header__cta{background:var(--gold);color:var(--main);border-color:var(--gold)}
+.c-mega{border-radius:var(--r-md);position:absolute;top:calc(100% + 14px);left:50%;width:min(760px,92vw);transform:translate(-50%,8px);opacity:0;visibility:hidden;transition:opacity .3s var(--ease),transform .3s var(--ease),visibility .3s;background:var(--paper);color:var(--ink);border:1px solid var(--line);box-shadow:0 30px 60px -30px rgba(16,35,63,.35);padding:26px 28px 22px;display:grid;grid-template-columns:200px 1fr;gap:28px}
 .c-nav__item.is-open .c-mega{opacity:1;visibility:visible;transform:translate(-50%,0)}
 .c-mega__intro{border-right:1px solid var(--line);padding-right:22px}
 .c-mega__intro b{display:block;font-family:var(--f-serif);font-size:20px;line-height:1.5}
@@ -103,7 +108,7 @@ h1,h2,h3,.lead,.btn,summary{word-break:auto-phrase;text-wrap:pretty}
 /* スマホドロワー（spmenu-01 型：右ドロワー＋アコーディオン） */
 .c-drawer{position:fixed;inset:0;z-index:150;visibility:hidden;pointer-events:none}
 .c-drawer.is-open{visibility:visible;pointer-events:auto}
-.c-drawer__bg{position:absolute;inset:0;background:rgba(18,40,58,.45);opacity:0;transition:opacity .35s var(--ease)}
+.c-drawer__bg{position:absolute;inset:0;background:rgba(16,35,63,.45);opacity:0;transition:opacity .35s var(--ease)}
 .c-drawer.is-open .c-drawer__bg{opacity:1}
 .c-drawer__panel{position:absolute;top:0;right:0;bottom:0;width:min(380px,88vw);background:var(--paper);color:var(--ink);transform:translateX(100%);transition:transform .45s var(--ease);display:flex;flex-direction:column;overflow-y:auto}
 .c-drawer.is-open .c-drawer__panel{transform:none}
@@ -123,20 +128,19 @@ body.is-locked{overflow:hidden}
 /* ============================================================
    FV（fv-52 SearchType 移植：夜の検索窓）
    ============================================================ */
-.hero{position:relative;width: 100%;min-height:max(760px,100svh);background:#0B1622;color:var(--on-dark);overflow:hidden;display:flex;align-items:center}
-.hero__photo{position:absolute;inset:-5%;background:#0B1622 url("src/fv.jpg") center/cover no-repeat;filter:brightness(.55) saturate(.85);will-change:transform}
-.hero__photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,20,32,.92) 0%,rgba(9,20,32,.72) 42%,rgba(9,20,32,.35) 100%)}
+.hero{position:relative;width: 100%;min-height:max(760px,100svh);background:#07101D;color:var(--on-dark);overflow:hidden;display:flex;align-items:center}
+.hero__photo{position:absolute;inset:-5%;background:#07101D url("src/hero-team.jpg") 70% center/cover no-repeat;filter:brightness(.62) saturate(.9);will-change:transform}
+
 .hero-inner{position:relative;z-index:2;width:min(1340px,calc(100% - 56px));margin:0 auto;padding:calc(var(--header-h) + 48px) 0 72px;display:grid;grid-template-columns:45fr 55fr;gap:clamp(28px,4vw,64px);align-items:center}
 .hero__eyebrow{font-family:var(--f-num);font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:#C9D6E2;display:inline-flex;gap:12px;align-items:center}
 .hero__eyebrow::before{content:"";width:28px;height:1px;background:var(--accent)}
 .hero h1{font-family:var(--f-serif);font-weight:700;font-size:clamp(30px,4.1vw,56px);line-height:1.38;margin:20px 0 0;letter-spacing:.02em;color:#fff}
 .hero h1 .hero__line{display:block;white-space:nowrap}
 .hero h1 .hero__eyebrow{display:flex;margin:0 0 22px;font-family:var(--f-num),var(--f-sans);font-weight:500;line-height:1.6;letter-spacing:.2em}
-.hero h1 em{font-style:normal;color:#E7B08F}
+.hero h1 em{font-style:normal;color:#E7B75F}
 .hero__sub{font-size:clamp(15px,1.3vw,17px);color:var(--on-dark-soft);margin:22px 0 0;max-width:30em;line-height:1.95}
 .hero__ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
-.hero__ctas .btn--primary{background:var(--accent);border-color:var(--accent)}
-.hero__ctas .btn--primary:hover{background:#fff;color:var(--main-deep);border-color:#fff}
+
 .hero__stats{display:flex;gap:clamp(18px,3vw,40px);margin:40px 0 0;padding:20px 0 0;border-top:1px solid rgba(242,244,245,.18);list-style:none}
 .hero__stats b{display:block;font-family:var(--f-num);font-weight:700;font-size:28px;line-height:1.1;color:#fff}
 .hero__stats b small{font-size:13px;margin-left:2px;font-family:var(--f-sans);font-weight:500}
@@ -156,25 +160,33 @@ body.is-locked{overflow:hidden}
 .j .hero__sug{opacity:0;transform:translateY(-6px)}
 .j .hero__sug.is-on{opacity:1;transform:none}
 .hero__answer{margin:22px 0 0 10px;font-family:var(--f-serif);font-size:clamp(16px,1.5vw,19px);line-height:1.8;color:#fff;max-width:26em}
-.hero__answer span{color:#E7B08F}
+.hero__answer span{color:#E7B75F}
 .hero__note{margin:12px 0 0 10px;font-size:12px;color:rgba(242,244,245,.55)}
 .hero__wind{position:absolute;left:0;right:0;bottom:22px;z-index:1;color:rgba(242,244,245,.35);width:100%;height:60px}
 @media (prefers-reduced-motion:reduce){.hero__cursor{animation:none}}
+/* FV（fv-09 DataRipple）：写真＋光る点の格子＋左から濃紺のグラデーション */
+.hero__dots{position:absolute;inset:0;z-index:1;mix-blend-mode:screen;opacity:.85;pointer-events:none}
+.hero__shade{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(7,16,29,.92) 0%,rgba(7,16,29,.72) 42%,rgba(7,16,29,.18) 100%);pointer-events:none}
+.hero-inner--single{grid-template-columns:minmax(0,640px);z-index:2}
+.hero__chips{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0;padding:0}
+.hero__chips li{font-size:13px;padding:6px 14px;border-radius:999px;background:rgba(53,195,232,.12);border:1px solid rgba(53,195,232,.45);color:#D7F2FA}
+.hero__photo-note{position:absolute;right:20px;bottom:14px;z-index:2;margin:0;font-size:11px;color:rgba(244,247,250,.5)}
+
 
 /* ============================================================
    ② 共感（sec-empathy-04 移植：23:47の独り言）
    ============================================================ */
 .c-empathy{position:relative;padding:124px 0 136px;background:var(--main-deep);color:var(--on-dark);overflow:hidden}
-.c-empathy::before{content:"";position:absolute;top:-180px;right:-120px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(180,100,60,.16),transparent 66%);pointer-events:none}
+.c-empathy::before{content:"";position:absolute;top:-180px;right:-120px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(231,183,95,.16),transparent 66%);pointer-events:none}
 .c-empathy::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(242,244,245,.03) 1px,transparent 1px);background-size:100% 44px;pointer-events:none}
 .c-empathy__top{display:flex;align-items:baseline;gap:22px;flex-wrap:wrap}
 .c-empathy__clock{font-family:var(--f-num);font-weight:700;font-size:clamp(74px,12vw,140px);line-height:1;color:#fff}
-.c-empathy__clock i{font-style:normal;color:#E7B08F;display:inline-block;transform:translateY(-.06em);animation:empBlink 1.4s steps(1,end) infinite}
+.c-empathy__clock i{font-style:normal;color:#E7B75F;display:inline-block;transform:translateY(-.06em);animation:empBlink 1.4s steps(1,end) infinite}
 @keyframes empBlink{0%,60%{opacity:1}61%,100%{opacity:.15}}
 .c-empathy__dow{font-size:14px;letter-spacing:.06em;color:#AFC0CF;padding-bottom:16px}
 .c-empathy h2{font-family:var(--f-serif);font-weight:600;font-size:clamp(26px,3.8vw,40px);line-height:1.6;margin:30px 0 0;color:#fff}
 .c-empathy__grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1fr);gap:38px;margin-top:48px;align-items:stretch}
-.c-empathy__shot{position:relative;margin:0;border-radius:4px;overflow:hidden;min-height:320px}
+.c-empathy__shot{position:relative;margin:0;border-radius:var(--r-md);overflow:hidden;min-height:320px}
 .c-empathy__shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .c-empathy__shot figcaption{position:absolute;left:18px;right:18px;bottom:15px;z-index:3;font-size:14px;line-height:1.5;color:rgba(242,244,245,.95)}
 .c-empathy__shot--night img{filter:grayscale(.6) brightness(.5) contrast(1.12)}
@@ -182,12 +194,12 @@ body.is-locked{overflow:hidden}
 .c-empathy__shot--day::after{content:"";position:absolute;left:0;right:0;bottom:0;height:52%;z-index:2;background:linear-gradient(180deg,rgba(12,18,26,0),rgba(12,18,26,.8))}
 .c-empathy__lines{border-left:1px solid rgba(242,244,245,.18);align-self:center}
 .c-empathy__t{position:relative;margin:0;padding:16px 0 16px 32px;color:#C2CDD7;font-size:16px}
-.c-empathy__t::before{content:"";position:absolute;left:-3px;top:31px;width:5px;height:5px;border-radius:50%;background:#E7B08F}
+.c-empathy__t::before{content:"";position:absolute;left:-3px;top:31px;width:5px;height:5px;border-radius:50%;background:#E7B75F}
 .c-empathy__t small{display:block;font-family:var(--f-num);font-size:13px;letter-spacing:.24em;color:#8FA3B5;margin-bottom:2px}
 .c-empathy__t b{color:#fff;font-weight:700}
 .c-empathy__turn{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:38px;margin-top:66px;align-items:center}
 .c-empathy__turnbody{display:grid;grid-template-columns:1px minmax(0,1fr);gap:26px}
-.c-empathy__tline{background:linear-gradient(#E7B08F,rgba(231,176,143,.12));width:1px}
+.c-empathy__tline{background:linear-gradient(#E7B75F,rgba(231,183,95,.12));width:1px}
 .c-empathy__turntext p{margin:0;font-family:var(--f-serif);font-size:clamp(17px,2vw,21px);line-height:2.1;color:#F0F3F5}
 .c-empathy__turntext small{display:block;font-size:14px;line-height:1.8;color:#AFC0CF;margin-top:16px;letter-spacing:.04em}
 @media (prefers-reduced-motion:reduce){.c-empathy__clock i{animation:none}}
@@ -195,15 +207,15 @@ body.is-locked{overflow:hidden}
 /* ============================================================
    ③ 選ばれる理由（sec-reasons-02 移植：左sticky＋特大番号）
    ============================================================ */
-.c-reasons{padding:128px 0;position:relative;background:var(--paper);overflow:hidden}
+.c-reasons{padding:128px 0;position:relative;background:#fff;overflow:hidden}
 .c-reasons__grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:64px;align-items:start}
 .c-reasons__side{position:sticky;top:110px}
 .c-reasons__side .c-wind{margin-top:30px}
 .c-reasons__list{border-top:1px solid var(--ink)}
 .c-reasons__item{display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:start;padding:40px 4px;border-bottom:1px solid var(--line)}
 .c-reasons__n{font-feature-settings:"lnum" 1;font-variant-numeric:lining-nums;font-family:var(--f-en);font-weight:500;font-size:clamp(56px,6.4vw,96px);line-height:.8;color:transparent;-webkit-text-stroke:1.2px var(--main);transition:color .4s}
-.c-reasons__item:hover .c-reasons__n{color:rgba(30,58,95,.08)}
-.c-reasons__thumb{width:112px;height:84px;border-radius:2px;overflow:hidden;float:right;margin:0 0 10px 18px}
+.c-reasons__item:hover .c-reasons__n{color:rgba(16,35,63,.08)}
+.c-reasons__thumb{width:112px;height:84px;border-radius:var(--r-sm);overflow:hidden;float:right;margin:0 0 10px 18px}
 .c-reasons__thumb img{width:100%;height:100%;object-fit:cover}
 .c-reasons h3{font-family:var(--f-serif);font-size:clamp(20px,2.2vw,25px);font-weight:700;margin:0 0 10px;line-height:1.5}
 .c-reasons__item p{color:var(--muted);font-size:15px;margin:0}
@@ -212,18 +224,18 @@ body.is-locked{overflow:hidden}
 /* ============================================================
    ④ サービス（sec-services-14 移植：サービスファイル）
    ============================================================ */
-.c-services{position:relative;padding:120px 0 128px;background:var(--bg) url("src/texture-1.jpg") center/600px repeat;overflow:hidden}
-.c-services::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(30,58,95,.05) 1px,transparent 1px);background-size:100% 30px;-webkit-mask-image:linear-gradient(#000,transparent 70%);mask-image:linear-gradient(#000,transparent 70%);pointer-events:none}
+.c-services{position:relative;padding:120px 0 128px;background:var(--sub);overflow:hidden}
+.c-services::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(16,35,63,.05) 1px,transparent 1px);background-size:100% 30px;-webkit-mask-image:linear-gradient(#000,transparent 70%);mask-image:linear-gradient(#000,transparent 70%);pointer-events:none}
 .c-services__head{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:end;margin-bottom:58px}
 .c-services__head p{color:var(--muted);font-size:15px;margin:0}
 .c-services__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 28px}
 .c-file{display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .35s var(--ease)}
 .c-file:hover{transform:translateY(-6px)}
-.c-file__tab{position:relative;z-index:2;align-self:flex-start;display:inline-flex;align-items:center;gap:10px;background:var(--paper);border:1px solid var(--line);border-bottom:none;border-radius:4px 4px 0 0;padding:8px 18px 7px;margin:0 0 -1px 16px}
+.c-file__tab{position:relative;z-index:2;align-self:flex-start;display:inline-flex;align-items:center;gap:10px;background:var(--paper);border:1px solid var(--line);border-bottom:none;border-radius:10px 10px 0 0;padding:8px 18px 7px;margin:0 0 -1px 16px}
 .c-file__tab b{font-family:var(--f-num);font-weight:700;font-size:12px;letter-spacing:.2em;color:var(--accent)}
 .c-file__tab span{font-size:12px;letter-spacing:.12em;color:var(--muted)}
-.c-file__body{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:22px 24px 22px}
-.c-file__ph{margin:-22px -24px 18px;border-bottom:1px solid var(--line);overflow:hidden;border-radius:4px 4px 0 0}
+.c-file__body{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);border-radius:var(--r-md);box-shadow:var(--shadow-1);padding:22px 24px 22px}
+.c-file__ph{margin:-22px -24px 18px;border-bottom:1px solid var(--line);overflow:hidden;border-radius:var(--r-md) var(--r-md) 0 0}
 .c-file__ph img{width:100%;aspect-ratio:16/7;object-fit:cover;transition:transform .8s var(--ease)}
 .c-file:hover .c-file__ph img{transform:scale(1.04)}
 .c-file h3{font-family:var(--f-serif);font-weight:700;font-size:21px;line-height:1.5;margin:0 0 10px;display:flex;align-items:center;gap:12px}
@@ -243,8 +255,8 @@ body.is-locked{overflow:hidden}
 /* ============================================================
    ⑤ 実績の一数字（sec-numbers-07 移植）
    ============================================================ */
-.c-number{position:relative;overflow:hidden;background:var(--paper);padding:120px 0 120px}
-.c-number__glow{position:absolute;left:-14%;top:-18%;width:64%;aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle at 40% 40%,rgba(30,58,95,.09),rgba(30,58,95,0) 68%);pointer-events:none}
+.c-number{position:relative;overflow:hidden;background:var(--sub);padding:120px 0 120px}
+.c-number__glow{position:absolute;left:-14%;top:-18%;width:64%;aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle at 40% 40%,rgba(16,35,63,.09),rgba(16,35,63,0) 68%);pointer-events:none}
 .c-number__hero{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,3.4vw,56px);align-items:center;margin-top:20px}
 .c-number__lead{font-family:var(--f-serif);font-weight:700;font-size:clamp(17px,2vw,23px);color:var(--muted);margin:0 0 4px;line-height:1.6}
 .c-number__num{display:flex;align-items:flex-start;margin:0;color:var(--main);font-family:var(--f-en);font-weight:500;line-height:.86;letter-spacing:-.02em;font-size:clamp(110px,18vw,240px);font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1}
@@ -253,7 +265,7 @@ body.is-locked{overflow:hidden}
 .c-number h2{font-family:var(--f-serif);font-weight:700;font-size:clamp(22px,2.7vw,32px);line-height:1.55;margin:16px 0 0}
 .c-number__desc{font-size:15px;color:var(--muted);margin:14px 0 0;max-width:28em}
 .c-number__photo{position:relative;margin:0}
-.c-number__photo img{width:100%;height:clamp(260px,31vw,400px);object-fit:cover;border-radius:2px;box-shadow:0 34px 60px -34px rgba(18,40,58,.55)}
+.c-number__photo img{width:100%;height:clamp(260px,31vw,400px);object-fit:cover;border-radius:var(--r-md);box-shadow:0 34px 60px -34px rgba(16,35,63,.55)}
 .c-number__photo figcaption{margin-top:10px;font-size:14px;line-height:1.7;color:var(--muted);padding-left:14px;border-left:3px solid var(--accent)}
 .c-number__subs{list-style:none;display:flex;flex-wrap:wrap;gap:clamp(20px,3.6vw,52px);margin:48px 0 0;padding:26px 0 0;border-top:1px solid var(--line)}
 .c-number__subs li{flex:1 1 180px;min-width:0;display:flex;gap:16px;align-items:center}
@@ -273,8 +285,8 @@ body.is-locked{overflow:hidden}
 .c-works__row{display:grid;grid-template-columns:96px 132px 1fr auto;gap:28px;align-items:center;padding:30px 8px;border-bottom:1px solid var(--line);text-decoration:none;color:inherit;transition:padding .3s var(--ease),background .3s}
 .c-works__row:hover{padding-left:20px;background:var(--paper)}
 .c-works__n{font-feature-settings:"lnum" 1;font-variant-numeric:lining-nums;font-family:var(--f-en);font-size:clamp(40px,4.6vw,64px);line-height:.9;color:transparent;-webkit-text-stroke:1.1px var(--ink);transition:.3s}
-.c-works__row:hover .c-works__n{-webkit-text-stroke-color:var(--accent);color:rgba(180,100,60,.08)}
-.c-works__img{width:132px;aspect-ratio:4/3;object-fit:cover;border-radius:2px}
+.c-works__row:hover .c-works__n{-webkit-text-stroke-color:var(--accent);color:rgba(231,183,95,.08)}
+.c-works__img{width:132px;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r-sm)}
 .c-works__cat{font-family:var(--f-num);font-size:12px;letter-spacing:.18em;color:var(--accent)}
 .c-works__row h3{font-family:var(--f-serif);font-weight:700;font-size:clamp(17px,1.8vw,21px);line-height:1.6;margin:4px 0 6px}
 .c-works__row p{color:var(--muted);font-size:14px;margin:0;max-width:40em}
@@ -284,13 +296,13 @@ body.is-locked{overflow:hidden}
 /* ============================================================
    ⑥-2 お客様の声（sec-voice-14 移植：余白の三聲。4件のため2列）
    ============================================================ */
-.c-voice{position:relative;padding:116px 0 128px;background:var(--paper);overflow:hidden}
-.c-voice::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(30,58,95,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(30,58,95,.045) 1px,transparent 1px);background-size:36px 36px;-webkit-mask-image:radial-gradient(ellipse at 50% 40%,#000 30%,transparent 75%);mask-image:radial-gradient(ellipse at 50% 40%,#000 30%,transparent 75%);pointer-events:none}
+.c-voice{position:relative;padding:116px 0 128px;background:var(--cream);overflow:hidden}
+.c-voice::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(16,35,63,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(16,35,63,.045) 1px,transparent 1px);background-size:36px 36px;-webkit-mask-image:radial-gradient(ellipse at 50% 40%,#000 30%,transparent 75%);mask-image:radial-gradient(ellipse at 50% 40%,#000 30%,transparent 75%);pointer-events:none}
 .c-voice__head{max-width:640px;margin:0 auto;text-align:center}
 .c-voice__head .u-lead{margin-left:auto;margin-right:auto}
 .c-voice__rule{width:56px;height:2px;background:var(--accent);margin:24px auto 0}
 .c-voice__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:52px}
-.c-voice__card{margin:0;background:#fff;border:1px solid var(--line);border-radius:2px;padding:30px 30px 24px;display:flex;flex-direction:column}
+.c-voice__card{margin:0;background:#fff;border:1px solid var(--line);border-radius:var(--r-md);box-shadow:var(--shadow-1);padding:30px 30px 24px;display:flex;flex-direction:column}
 .c-voice__q{font-family:var(--f-en);font-size:56px;line-height:1;color:var(--accent);display:block;height:30px}
 .c-voice__quote{margin:14px 0 0;flex:1;font-family:var(--f-serif);font-size:18px;line-height:1.9;color:var(--ink)}
 .c-voice__quote p{margin:0 0 .5em}
@@ -310,7 +322,7 @@ body.is-locked{overflow:hidden}
 /* ============================================================
    ⑦ プロフィール（sec-message-03 移植：マガジン見開き）
    ============================================================ */
-.c-message{padding:128px 0 140px;background:var(--sub) url("src/section-bg-3.jpg") center/cover no-repeat;position:relative;overflow:hidden}
+.c-message{padding:128px 0 140px;background:var(--cream);position:relative;overflow:hidden}
 .c-message__spread{display:grid;grid-template-columns:300px 1fr;gap:0 64px;align-items:start}
 .c-message__left{position:relative}
 .c-message__vlabel{position:absolute;left:-14px;top:0;writing-mode:vertical-rl;font-family:var(--f-num);font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--main)}
@@ -340,7 +352,7 @@ body.is-locked{overflow:hidden}
 .c-pricing__in{width:min(860px,calc(100% - 48px));margin:0 auto;position:relative;z-index:1}
 .c-pricing__head{text-align:center;margin-bottom:54px}
 .c-pricing__head .u-lead{margin-left:auto;margin-right:auto}
-.c-pricing__sheet{background:var(--paper);border:1px solid var(--line);border-radius:2px;padding:52px clamp(22px,6vw,64px) 46px;box-shadow:0 30px 60px -48px rgba(18,40,58,.4)}
+.c-pricing__sheet{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:52px clamp(22px,6vw,64px) 46px;box-shadow:0 30px 60px -48px rgba(16,35,63,.4)}
 .c-pricing__group{margin-bottom:44px}
 .c-pricing__group:last-of-type{margin-bottom:8px}
 .c-pricing h3{display:flex;align-items:center;gap:16px;font-family:var(--f-serif);font-weight:600;font-size:17px;letter-spacing:.12em;margin:0 0 10px}
@@ -371,7 +383,7 @@ body.is-locked{overflow:hidden}
 .c-process__step:last-child{padding-bottom:0}
 .c-process__node{position:absolute;left:-64px;top:0;width:44px;height:44px;border-radius:50%;background:var(--paper);border:1.5px solid var(--main);display:grid;place-items:center;font-family:var(--f-num);font-weight:700;font-size:14px;color:var(--main)}
 .c-process__card{display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:start;border-bottom:1px solid var(--line);padding-bottom:28px}
-.c-process__card img{width:120px;aspect-ratio:1/1;object-fit:cover;border-radius:2px}
+.c-process__card img{width:120px;aspect-ratio:1/1;object-fit:cover;border-radius:var(--r-sm)}
 .c-process__ph{font-family:var(--f-num);font-size:12px;letter-spacing:.2em;color:var(--accent);text-transform:uppercase}
 .c-process h3{font-family:var(--f-serif);font-weight:700;font-size:21px;margin:4px 0 8px}
 .c-process__card p{margin:0;color:var(--muted);font-size:15px}
@@ -379,7 +391,7 @@ body.is-locked{overflow:hidden}
 /* ============================================================
    ⑩ FAQ（sec-faq-03 移植：左sticky×番号アコーディオン）
    ============================================================ */
-.c-faq{padding:120px 0;background:var(--bg) url("src/section-bg-1.jpg") center/cover no-repeat;position:relative}
+.c-faq{padding:120px 0;background:var(--sub);position:relative}
 .c-faq__layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start}
 .c-faq__side{position:sticky;top:110px}
 .c-faq__side a{color:var(--main);font-weight:700;font-size:14px}
@@ -407,7 +419,7 @@ html:not(.j) .c-faq__a{grid-template-rows:1fr}
 .c-news__circ{width:40px;height:40px;border-radius:50%;border:1px solid var(--main);display:grid;place-items:center;font-family:var(--f-num)}
 .c-news__row{display:grid;grid-template-columns:150px 1fr;gap:24px;align-items:center;padding:22px 0;border-bottom:1px dashed var(--line);text-decoration:none;color:inherit}
 .c-news__row:first-child{border-top:1px dashed var(--line)}
-.c-news__row img{width:150px;aspect-ratio:1200/630;object-fit:cover;border-radius:2px}
+.c-news__row img{width:150px;aspect-ratio:1200/630;object-fit:cover;border-radius:var(--r-sm)}
 .c-news__meta{display:flex;gap:12px;align-items:center;font-size:12px;color:var(--muted)}
 .c-news__meta .c-news__cat{color:var(--accent);font-weight:700;letter-spacing:.08em}
 .c-news__row h3{font-family:var(--f-serif);font-weight:700;font-size:18px;line-height:1.6;margin:6px 0 0;transition:color .3s}
@@ -416,18 +428,18 @@ html:not(.j) .c-faq__a{grid-template-rows:1fr}
 /* ============================================================
    ⑫ 最終CTA（sec-cta-13 移植：顔の見える窓口）
    ============================================================ */
-.c-cta{position:relative;padding:120px 0 0;background:var(--sub);overflow:hidden}
+.c-cta{position:relative;padding:120px 0 0;background:var(--cream);overflow:hidden}
 .c-cta__grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,5vw,72px);align-items:center}
 .c-cta__photos{position:relative;padding-bottom:70px}
 .c-cta__photo{margin:0}
-.c-cta__photo img{width:100%;object-fit:cover;border-radius:2px}
+.c-cta__photo img{width:100%;object-fit:cover;border-radius:var(--r-md)}
 .c-cta__photo--main img{aspect-ratio:4/5;width:72%;object-position:center top}
-.c-cta__photo--wide{position:absolute;right:0;bottom:0;width:58%;border:6px solid var(--sub)}
+.c-cta__photo--wide{position:absolute;right:0;bottom:0;width:58%;border:6px solid var(--cream);border-radius:calc(var(--r-md) + 6px)}
 .c-cta__photo--wide img{aspect-ratio:4/3}
 .c-cta__photo figcaption{font-size:12px;color:var(--muted);margin-top:6px}
 .c-cta h2{font-family:var(--f-serif);font-weight:700;font-size:clamp(28px,3.6vw,42px);line-height:1.5;margin:14px 0 0}
 .c-cta__u{position:relative;display:inline-block}
-.c-cta__u i{position:absolute;left:0;right:0;bottom:2px;height:8px;background:rgba(180,100,60,.28);transform-origin:left;z-index:-1}
+.c-cta__u i{position:absolute;left:0;right:0;bottom:2px;height:8px;background:rgba(231,183,95,.28);transform-origin:left;z-index:-1}
 .c-cta__body{color:var(--muted);margin:20px 0 0;max-width:32em}
 .c-cta__why{margin:18px 0 0;font-family:var(--f-serif);font-size:17px;line-height:1.9;color:var(--ink);padding-left:16px;border-left:3px solid var(--accent)}
 .c-cta__chips-label{font-size:13px;color:var(--muted);margin:26px 0 10px}
@@ -443,14 +455,14 @@ html:not(.j) .c-faq__a{grid-template-rows:1fr}
 /* ============================================================
    フッター（footer-03 型：CTA一体＋事業者情報）
    ============================================================ */
-.c-footer{background:#0E1D2B url("src/texture-2.jpg") center/420px repeat;background-blend-mode:multiply;color:var(--on-dark-soft);padding:84px 0 28px;position:relative;overflow:hidden}
+.c-footer{background:#0A1526 url("src/texture-2.jpg") center/420px repeat;background-blend-mode:multiply;color:var(--on-dark-soft);padding:84px 0 28px;position:relative;overflow:hidden}
 .c-footer__top{display:grid;grid-template-columns:1.1fr .9fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(242,244,245,.12)}
 .c-footer .c-logo{color:#fff}
 .c-footer__desc{font-size:14px;line-height:1.9;margin:18px 0 0;max-width:24em}
 .c-footer__h{font-family:var(--f-num);font-size:12px;letter-spacing:.24em;color:#8FA3B5;text-transform:uppercase;margin:0 0 14px}
 .c-footer__links{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:14px}
 .c-footer__links a{text-decoration:none;color:var(--on-dark)}
-.c-footer__links a:hover{color:#E7B08F}
+.c-footer__links a:hover{color:#E7B75F}
 .c-footer__nap{margin:0;font-size:14px;display:grid;grid-template-columns:auto 1fr;gap:8px 16px}
 .c-footer__nap dt{color:#8FA3B5}
 .c-footer__nap dd{margin:0;color:var(--on-dark)}
@@ -464,7 +476,7 @@ html:not(.j) .c-faq__a{grid-template-rows:1fr}
    ============================================================ */
 .c-pagehero{position:relative;padding:calc(var(--header-h) + 72px) 0 72px;background:var(--main-deep);color:var(--on-dark);overflow:hidden}
 .c-pagehero__bg{position:absolute;inset:0;background:url("src/section-bg-2.jpg") center/cover no-repeat;opacity:.55}
-.c-pagehero__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,29,43,.92),rgba(14,29,43,.55))}
+.c-pagehero__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,21,38,.92),rgba(10,21,38,.55))}
 .c-pagehero .u-eyebrow{color:#C9D6E2}
 .c-pagehero h1{font-family:var(--f-serif);font-weight:700;font-size:clamp(32px,4.4vw,52px);line-height:1.45;margin:16px 0 0;color:#fff}
 .c-pagehero p{margin:18px 0 0;max-width:36em;color:var(--on-dark-soft)}
@@ -477,7 +489,8 @@ html:not(.j) .c-faq__a{grid-template-rows:1fr}
 .c-split{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start}
 .c-split__side{position:sticky;top:110px}
 .c-split__fig{margin:28px 0 0;max-width:420px}
-.c-split__fig img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px;box-shadow:0 30px 50px -36px rgba(18,40,58,.5)}
+.c-split__fig img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r-md);box-shadow:0 30px 50px -36px rgba(16,35,63,.5)}
+.c-split__cap{font-size:12px;color:var(--note);margin-top:6px}
 .c-prose{font-size:16px;line-height:2}
 .c-prose p{margin:0 0 1.2em}
 .c-prose h3{font-family:var(--f-serif);font-weight:700;font-size:22px;line-height:1.6;margin:1.6em 0 .6em;padding-left:14px;border-left:3px solid var(--accent)}
@@ -487,19 +500,19 @@ html:not(.j) .c-faq__a{grid-template-rows:1fr}
 .c-table th,.c-table td{padding:18px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
 .c-table th{width:30%;font-weight:700;color:var(--main);white-space:nowrap}
 .c-checks{list-style:none;margin:0;padding:0;display:grid;gap:12px}
-.c-checks li{position:relative;padding:14px 18px 14px 46px;background:var(--paper);border:1px solid var(--line);border-radius:2px}
+.c-checks li{position:relative;padding:14px 18px 14px 46px;background:var(--paper);border:1px solid var(--line);border-radius:var(--r-sm);box-shadow:var(--shadow-1)}
 .c-checks li::before{content:"";position:absolute;left:18px;top:24px;width:12px;height:7px;border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(-45deg)}
 .c-related{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:28px}
-.c-related a{display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:center;padding:14px;border:1px solid var(--line);background:var(--paper);text-decoration:none;color:inherit;transition:border-color .3s}
+.c-related a{display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:center;padding:14px;border:1px solid var(--line);border-radius:var(--r-md);box-shadow:var(--shadow-1);background:var(--paper);text-decoration:none;color:inherit;transition:border-color .3s}
 .c-related a:hover{border-color:var(--main)}
-.c-related img{width:96px;aspect-ratio:1/1;object-fit:cover}
+.c-related img{width:96px;aspect-ratio:1/1;object-fit:cover;border-radius:var(--r-sm)}
 .c-related b{display:block;font-family:var(--f-serif);font-size:16px}
 .c-related span{font-size:13px;color:var(--muted)}
 .c-form{display:grid;gap:22px}
 .c-form label{display:block;font-weight:700;font-size:15px;margin-bottom:8px}
 .c-form .c-form__req{display:inline-block;margin-left:8px;font-size:11px;font-weight:700;color:#fff;background:var(--accent);padding:1px 7px;border-radius:2px;vertical-align:2px}
-.c-form input,.c-form select,.c-form textarea{width:100%;padding:14px 16px;border:1px solid var(--line);background:#fff;border-radius:2px;font:inherit;color:var(--ink)}
-.c-form input:focus,.c-form select:focus,.c-form textarea:focus{border-color:var(--main);outline:none;box-shadow:0 0 0 3px rgba(30,58,95,.15)}
+.c-form input,.c-form select,.c-form textarea{width:100%;padding:14px 16px;border:1px solid var(--line);background:#fff;border-radius:var(--r-sm);font:inherit;color:var(--ink)}
+.c-form input:focus,.c-form select:focus,.c-form textarea:focus{border-color:var(--main);outline:none;box-shadow:0 0 0 3px rgba(16,35,63,.15)}
 .c-form textarea{min-height:200px;resize:vertical}
 .c-form__agree{display:flex;gap:10px;align-items:flex-start;font-size:14px}
 .c-form__agree input{width:22px;height:22px;margin-top:3px;flex:none;accent-color:var(--main)}
@@ -517,8 +530,7 @@ html:not(.j) .c-faq__a{grid-template-rows:1fr}
 .c-ctaband__in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px 40px}
 .c-ctaband h2{font-family:var(--f-serif);font-weight:700;font-size:clamp(24px,3vw,34px);line-height:1.5;margin:0;color:#fff}
 .c-ctaband p{margin:10px 0 0;color:var(--on-dark-soft);font-size:15px}
-.c-ctaband .btn--primary{background:var(--accent);border-color:var(--accent)}
-.c-ctaband .btn--primary:hover{background:#fff;color:var(--main-deep);border-color:#fff}
+
 
 /* スクロールで現れる（app.js の IntersectionObserver。JSが無ければ最初から表示） */
 .j [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
@@ -607,8 +619,8 @@ input[type=text],input[type=email],input[type=tel],input[type=url],textarea,sele
    ブログ（templates/blog-shared.css を追記・配色のみ案件に合わせて調整）
    ============================================================ */
 :root{ /* ブログ断片（blog-shared.css）が使うトークンをサイトの配色へ対応づけ */
-  --ai:#1E3A5F; --ai2:#12283A; --shu:#B4643C; --yama:#B4643C; --yama2:#F3DCCD;
-  --kami:#F4F5F2; --kami2:#ECEFF1; --body:#2A2F35; }
+  --ai:#10233F; --ai2:#0A1526; --shu:#0F7FA0; --yama:#0F7FA0; --yama2:#E4F4FA;
+  --kami:#F4F7FA; --kami2:#EEF3F8; --body:#2A2F35; }
 /* blog-shared.css — ブログ（個別/一覧）・サイドバー・page-hero(marquee) の共通CSS断片。
    STEP 7 で各サイトの assets/css/_shared.css の末尾に追記して使う。
    前提トークン: --ai --ai2 --shu --yama --yama2 --kami --kami2 --ink --body --muted --line。
@@ -623,7 +635,7 @@ input[type=text],input[type=email],input[type=tel],input[type=url],textarea,sele
 .page-hero .wrap{ position:relative; z-index:3; }
 .page-hero::before{ z-index:2; }
 .page-hero__bg{ position:absolute; inset:0; z-index:0; overflow:hidden; display:flex; align-items:center; }
-.page-hero__bg::after{ content:""; position:absolute; inset:0; background:linear-gradient(105deg, rgba(14,29,43,.92) 0%, rgba(30,58,95,.80) 50%, rgba(14,29,43,.92) 100%); }
+.page-hero__bg::after{ content:""; position:absolute; inset:0; background:linear-gradient(105deg, rgba(10,21,38,.92) 0%, rgba(16,35,63,.80) 50%, rgba(10,21,38,.92) 100%); }
 .page-hero__mq{ display:flex; width:max-content; height:100%; will-change:transform; animation:page-hero-mq 64s linear infinite; }
 .page-hero__mq img{ height:100%; width:auto; aspect-ratio:4/3; object-fit:cover; display:block; flex:0 0 auto; }
 @keyframes page-hero-mq{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
@@ -660,7 +672,7 @@ input[type=text],input[type=email],input[type=tel],input[type=url],textarea,sele
 /* --- 本文タイポグラフィ（読みやすさの主戦場）---
    ねらい：1段落＝1〜3文で改行多め／強調は黄色マーカー／H2とH3で階層が一目で分かる。
    --mark はマーカーの黄色。サイトのパレットに合わせて調整してよい（淡い黄色を保つこと）。 */
-.post-body{ --mark:#F5DCCB; counter-reset:h2c; font-size:16.5px; line-height:2.05; color:var(--body);
+.post-body{ --mark:#FAF3E3; counter-reset:h2c; font-size:16.5px; line-height:2.05; color:var(--body);
   word-break:auto-phrase; text-wrap:pretty; }   /* 助詞が行頭に落ちるのを減らす（Chrome）。他ブラウザでは無視される */
 .post-body > *:first-child{ margin-top:0; }
 .post-body p{ font-size:inherit; line-height:inherit; color:inherit; margin:0 0 1.85em; }
@@ -946,10 +958,12 @@ input[type=text],input[type=email],input[type=tel],input[type=url],textarea,sele
 <!-- ZOROYA:MAIN -->
 <main id="main">
 
-  <!-- ① ファーストビュー（fv-52 SearchType 移植）｜壁：見ない・読まない -->
+  <!-- ① ファーストビュー（fv-09 DataRipple 移植：光る点の格子に波紋が広がる）｜壁：見ない・読まない -->
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero__photo" aria-hidden="true"></div>
-    <div class="hero-inner">
+    <canvas class="hero__dots" data-hero-dots aria-hidden="true"></canvas>
+    <div class="hero__shade" aria-hidden="true"></div>
+    <div class="hero-inner hero-inner--single">
       <div class="hero__text">
         <h1 id="hero-title"><span class="hero__eyebrow"><span class="zp">中小企業・個人事業主の生成AI導入支援</span><span class="hero__eyebrow-name">｜田上 徹</span></span><span class="hero__line">AIは入れた</span><span class="hero__line">なのに<em>仕事が減らない</em></span></h1>
         <p class="hero__sub">その差を埋めるのが私の仕事です。業務の棚卸しから毎日回る仕組みまで伴走します</p>
@@ -957,28 +971,17 @@ input[type=text],input[type=email],input[type=tel],input[type=url],textarea,sele
           <a class="btn btn--primary" href="contact.html" data-cta="hero">無料で相談してみる<span class="btn__arrow" aria-hidden="true">→</span></a>
           <a class="btn btn--light" href="#works">実績を見る</a>
         </div>
+        <ul class="hero__chips">
+          <li>初回相談は無料</li><li>全国オンライン</li><li>記事1本・研修1回から</li>
+        </ul>
         <ul class="hero__stats">
           <li><b>4<small>年</small></b><span>ウェブライター歴</span></li>
           <li><b>2<small>年</small></b><span>AIコンサルタント歴</span></li>
           <li><b>2<small>年</small></b><span>AIセミナー講師歴</span></li>
         </ul>
       </div>
-      <div class="hero__search">
-        <p class="hero__clock" aria-hidden="true">PM <b>11:42</b>　閉院後の受付で</p>
-        <div class="hero__box" role="img" aria-label="夜に検索窓へ打ち込まれる悩みの例：chatgpt 業務効率化">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-          <span class="hero__q" data-hero-q aria-hidden="true">chatgpt 業務効率化</span><span class="hero__cursor" aria-hidden="true"></span>
-        </div>
-        <ul class="hero__sug" data-hero-sug aria-hidden="true">
-          <li><b>chatgpt 業務効率化</b> 具体例</li>
-          <li><b>chatgpt 業務効率化</b> プロンプト</li>
-          <li><b>chatgpt 業務効率化</b> セミナー</li>
-        </ul>
-        <p class="hero__answer">探しているのは使い方ではなく<br><span>「うちなら何を任せるか」</span>の答えかもしれません</p>
-        <p class="hero__note">検索候補は2026年10月時点のGoogleの表示から引用しています</p>
-      </div>
     </div>
-    <svg class="hero__wind" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C 240 10, 420 58, 720 30 S 1200 8, 1440 34" fill="none" stroke="currentColor" stroke-width="1"/><path d="M0 50 C 300 26, 520 60, 820 40 S 1240 22, 1440 46" fill="none" stroke="currentColor" stroke-width=".6"/></svg>
+    <p class="hero__photo-note">写真はイメージです</p>
   </section>
 
   <!-- ② 共感（sec-empathy-04 移植）｜壁：見ない・読まない -->
@@ -1009,8 +1012,8 @@ input[type=text],input[type=email],input[type=tel],input[type=url],textarea,sele
           </div>
         </div>
         <figure class="c-empathy__shot c-empathy__shot--day">
-          <picture><source type="image/webp" srcset="src/service-1.webp"><img src="src/service-1.jpg" alt="オンライン相談の画面と手元のノート" width="1024" height="1024" loading="lazy" decoding="async"></picture>
-          <figcaption>オンラインの無料相談で、任せる作業を一緒に決めます</figcaption>
+          <picture><source type="image/webp" srcset="src/teach-desk.webp"><img src="src/teach-desk.jpg" alt="紙に書いた業務の流れを見ながら話し合う二人（イメージ）" width="1536" height="1024" loading="lazy" decoding="async"></picture>
+          <figcaption>任せる作業を一緒に決めます（写真はイメージ）</figcaption>
         </figure>
       </div>
     </div>
@@ -1028,7 +1031,7 @@ input[type=text],input[type=email],input[type=tel],input[type=url],textarea,sele
           <svg class="c-wind" viewBox="0 0 420 28" aria-hidden="true"><path d="M2 20 C 90 2, 170 26, 260 12 S 380 6, 404 14"/><path d="M2 26 C 110 12, 210 28, 300 18"/><circle class="c-wind__dot" cx="410" cy="14" r="3.5"/></svg>
         </div>
         <div class="c-reasons__list">
-          <div class="c-reasons__item"><span class="c-reasons__n">01</span><div><div class="c-reasons__thumb"><picture><source type="image/webp" srcset="src/feature-1.webp"><img src="src/feature-1.jpg" alt="ホワイトボードに描いた矢印と四角の図" width="1024" height="1024" loading="lazy" decoding="async"></picture></div><h3><span class="zp">「使える状態」まで</span><span class="zp">やり切る</span></h3><p>5,000人在籍のAIスクールで、<b>800人以上の学習をサポート</b>してきました。ツールの紹介で終わらせず、あなたの業務で回るところまで付き合います。</p></div></div>
+          <div class="c-reasons__item"><span class="c-reasons__n">01</span><div><div class="c-reasons__thumb"><picture><source type="image/webp" srcset="src/seminar-people.webp"><img src="src/seminar-people.jpg" alt="研修でパソコンを操作する参加者（イメージ）" width="1536" height="1024" loading="lazy" decoding="async"></picture></div><h3><span class="zp">「使える状態」まで</span><span class="zp">やり切る</span></h3><p>5,000人在籍のAIスクールで、<b>800人以上の学習をサポート</b>してきました。ツールの紹介で終わらせず、あなたの業務で回るところまで付き合います。</p></div></div>
           <div class="c-reasons__item"><span class="c-reasons__n">02</span><div><div class="c-reasons__thumb"><picture><source type="image/webp" srcset="src/process-2.webp"><img src="src/process-2.jpg" alt="手書きのやることリストが書かれたノート" width="1024" height="1024" loading="lazy" decoding="async"></picture></div><h3>業務1つから始める</h3><p>いきなり全部をAIに置き換えません。<b>いちばん時間を取られている作業を1つ</b>選び、そこから形にします。「この作業なら使える」と実感できると、そのあとは自然に広がります。</p></div></div>
           <div class="c-reasons__item"><span class="c-reasons__n">03</span><div><div class="c-reasons__thumb"><picture><source type="image/webp" srcset="src/feature-3.webp"><img src="src/feature-3.jpg" alt="ノートパソコンと業務の流れを書いたノート" width="1024" height="1024" loading="lazy" decoding="async"></picture></div><h3>教える×書ける×作れる</h3><p>講師として伝える力、<b>ライター4年</b>の言語化、制作と開発の手。研修のあとに要るマニュアルや仕組みも、自分で作ってお渡しします。</p></div></div>
           <div class="c-reasons__item"><span class="c-reasons__n">04</span><div><div class="c-reasons__thumb"><picture><source type="image/webp" srcset="src/case-2.webp"><img src="src/case-2.jpg" alt="治療院の受付カウンター" width="1536" height="1024" loading="lazy" decoding="async"></picture></div><h3>現場の実例にもとづく提案</h3><p>接骨院・税理士事務所・小売の方への支援や研修で試した例を、<b>note で公開</b>しています。机の上の話ではなく、再現できるやり方を提案します。</p></div></div>
@@ -1051,7 +1054,7 @@ input[type=text],input[type=email],input[type=tel],input[type=url],textarea,sele
         <a class="c-file" href="service-ai-consulting.html">
           <span class="c-file__tab"><b>FILE 01</b><span>相談・導入</span></span>
           <div class="c-file__body">
-            <div class="c-file__ph"><picture><source type="image/webp" srcset="src/service-1.webp"><img src="src/service-1.jpg" alt="オンライン相談の画面とノート" width="1024" height="1024" loading="lazy" decoding="async"></picture></div>
+            <div class="c-file__ph"><picture><source type="image/webp" srcset="src/consult-online.webp"><img src="src/consult-online.jpg" alt="ノートパソコンでオンライン相談をする様子（イメージ）" width="1536" height="1024" loading="lazy" decoding="async"></picture></div>
             <h3><picture><source type="image/webp" srcset="src/icon-1.webp"><img class="c-file__icon" src="src/icon-1.png" alt="" width="40" height="40" loading="lazy" decoding="async"></picture>AI活用支援・コンサル</h3>
             <p>業務の棚卸しからツール選定・プロンプト設計まで。ChatGPT や Claude を、あなたの業務で回る形に落とし込みます。</p>
             <ul class="c-file__inc"><li>業務ヒアリングと任せる作業の選定</li><li>ツール選定・プロンプト設計</li><li>導入後のフォローアップ</li></ul>
@@ -1061,7 +1064,7 @@ input[type=text],input[type=email],input[type=tel],input[type=url],textarea,sele
         <a class="c-file" href="service-ai-training.html">
           <span class="c-file__tab"><b>FILE 02</b><span>研修・登壇</span></span>
           <div class="c-file__body">
-            <div class="c-file__ph"><picture><source type="image/webp" srcset="src/service-2.webp"><img src="src/service-2.jpg" alt="セミナー会場の後方から見たスクリーン" width="1024" height="1024" loading="lazy" decoding="async"></picture></div>
+            <div class="c-file__ph"><picture><source type="image/webp" srcset="src/seminar-people.webp"><img src="src/seminar-people.jpg" alt="少人数のAI研修でパソコンを操作する参加者（イメージ）" width="1536" height="1024" loading="lazy" decoding="async"></picture></div>
             <h3><picture><source type="image/webp" srcset="src/icon-2.webp"><img class="c-file__icon" src="src/icon-2.png" alt="" width="40" height="40" loading="lazy" decoding="async"></picture>AIセミナー・研修</h3>
             <p>実演中心で、未経験の方でも明日から使える状態を目指します。100名以上が参加するセミナーで登壇しています。</p>
             <ul class="c-file__inc"><li>受講者の業務に合わせた研修設計</li><li>実演中心の研修（1回〜）</li><li>オンライン開催に対応</li></ul>
@@ -1089,7 +1092,7 @@ input[type=text],input[type=email],input[type=tel],input[type=url],textarea,sele
           </div>
         </a>
       </div>
-      <p class="c-services__note">※費用は内容によって変わります。お見積もりに納得いただいてから着手します。</p>
+      <p class="c-services__note">※費用は内容によって変わります。お見積もりに納得いただいてから着手します。人物の写真はイメージです。</p>
     </div>
   </section>
 
@@ -1298,7 +1301,7 @@ input[type=text],input[type=email],input[type=tel],input[type=url],textarea,sele
       <div class="c-cta__grid">
         <div class="c-cta__photos">
           <figure class="c-cta__photo c-cta__photo--main"><picture><source type="image/webp" srcset="src/profile.webp"><img src="src/profile.jpg" alt="田上徹" width="600" height="600" loading="lazy" decoding="async"></picture><figcaption>相談も 研修も 制作も 私が担当します</figcaption></figure>
-          <figure class="c-cta__photo c-cta__photo--wide"><picture><source type="image/webp" srcset="src/process-4.webp"><img src="src/process-4.jpg" alt="打ち合わせのテーブル" width="1024" height="1024" loading="lazy" decoding="async"></picture></figure>
+          <figure class="c-cta__photo c-cta__photo--wide"><picture><source type="image/webp" srcset="src/teach-desk.webp"><img src="src/teach-desk.jpg" alt="資料を見ながら話し合う二人（イメージ）" width="1536" height="1024" loading="lazy" decoding="async"></picture></figure>
         </div>
         <div>
           <span class="u-eyebrow">Contact</span>
@@ -1373,27 +1376,50 @@ input[type=text],input[type=email],input[type=tel],input[type=url],textarea,sele
 <script>
 /* トップ専用：FV と セクション演出（GSAP が無くても内容はすべて読める） */
 (function(){
-  /* FV：夜の検索窓に悩みが打たれ、Googleの実際の検索候補が出る */
-  var q=document.querySelector('[data-hero-q]'), sug=document.querySelector('[data-hero-sug]');
+  /* FV（fv-09 DataRipple）：光る点の格子がゆっくり揺れ、波紋が広がる。マウス・指の動きでも波紋。
+     動きを減らす設定では静止した格子だけ。画面外では描画を止める。 */
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var Q=[
-    ['chatgpt 業務効率化',['具体例','プロンプト','セミナー']],
-    ['chatgpt 個人事業主',['プラン','経費']],
-    ['生成ai 相談',['おすすめ','危険']]
-  ];
-  function show(i){ sug.innerHTML=Q[i][1].map(function(s){return '<li><b>'+Q[i][0]+'</b> '+s+'</li>';}).join(''); sug.classList.add('is-on'); }
-  if(q&&sug){
-    if(reduce){ show(0); }
-    else{
-      var qi=0,ci=0,phase='type',hold=0; q.textContent='';
-      setInterval(function(){
-        var s=Q[qi][0];
-        if(phase==='type'){ q.textContent=s.slice(0,++ci); if(ci>=s.length){ phase='hold'; hold=0; show(qi); } }
-        else if(phase==='hold'){ if(++hold>34){ phase='del'; sug.classList.remove('is-on'); } }
-        else { q.textContent=s.slice(0,--ci); if(ci<=0){ phase='type'; qi=(qi+1)%Q.length; } }
-      },85);
+  (function(){
+    var cv=document.querySelector('[data-hero-dots]'); if(!cv||!cv.getContext) return;
+    var hero=cv.parentNode, ctx=cv.getContext('2d'), dpr=Math.min(window.devicePixelRatio||1,2);
+    var W=0,H=0,nodes=[],rip=[],tick=0,raf=0,visible=true,lastAuto=0;
+    function build(){
+      W=hero.clientWidth; H=hero.clientHeight; cv.width=W*dpr; cv.height=H*dpr; cv.style.width=W+'px'; cv.style.height=H+'px';
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+      var gap=W<768?22:26; nodes=[];
+      for(var x=0;x<=W+gap;x+=gap){ for(var y=0;y<=H+gap;y+=gap){ nodes.push([x,y]); } }
     }
-  }
+    function draw(){
+      ctx.clearRect(0,0,W,H); tick+=0.02;
+      for(var k=rip.length-1;k>=0;k--){ rip[k].r+=rip[k].v; if(rip[k].r>rip[k].m) rip.splice(k,1); }
+      for(var i=0;i<nodes.length;i++){
+        var bx=nodes[i][0], by=nodes[i][1];
+        var x=bx+(reduce?0:Math.sin(tick+by*0.005)*10), y=by+(reduce?0:Math.cos(tick+bx*0.005)*10), glow=0;
+        for(var r=0;r<rip.length;r++){
+          var dx=x-rip[r].x, dy=y-rip[r].y, d=Math.sqrt(dx*dx+dy*dy);
+          if(d>0&&d<rip[r].r&&d>rip[r].r-80){ var f=(1-Math.abs(d-(rip[r].r-40))/40)*22; x+=dx/d*f; y+=dy/d*f; glow=Math.max(glow,f/22); }
+        }
+        var a=0.42+(x/W)*0.42+glow*0.3;
+        ctx.fillStyle='rgba(53,195,232,'+Math.min(a,0.95).toFixed(3)+')';
+        ctx.beginPath(); ctx.arc(x,y,1.6+glow*1.4,0,6.2832); ctx.fill();
+      }
+    }
+    function loop(ts){
+      if(visible){
+        if(ts-lastAuto>2600){ lastAuto=ts; rip.push({x:W*(0.45+Math.random()*0.5),y:H*(0.2+Math.random()*0.6),r:10,m:Math.max(W,H)*0.45,v:6}); }
+        draw();
+      }
+      raf=requestAnimationFrame(loop);
+    }
+    function addRip(cx,cy){ var b=cv.getBoundingClientRect(); if(rip.length<12) rip.push({x:cx-b.left,y:cy-b.top,r:10,m:W*0.4,v:12}); }
+    build(); draw();
+    window.addEventListener('resize',function(){ build(); if(reduce) draw(); },{passive:true});
+    if(reduce) return;
+    hero.addEventListener('mousemove',function(e){ addRip(e.clientX,e.clientY); },{passive:true});
+    hero.addEventListener('touchmove',function(e){ if(e.touches[0]) addRip(e.touches[0].clientX,e.touches[0].clientY); },{passive:true});
+    if('IntersectionObserver' in window){ new IntersectionObserver(function(en){ visible=en[0].isIntersecting; }).observe(hero); }
+    raf=requestAnimationFrame(loop);
+  })();
   document.addEventListener('DOMContentLoaded',function(){
     if(!window.gsap||!window.ScrollTrigger||reduce) return;
     gsap.registerPlugin(ScrollTrigger);
