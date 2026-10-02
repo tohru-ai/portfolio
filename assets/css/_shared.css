@@ -536,6 +536,7 @@ html:not(.j) .c-faq__a{grid-template-rows:1fr}
 }
 @media (max-width:768px){
   :root{--header-h:64px}
+  .c-decor{display:none}
   .l-wrap{width:calc(100% - 40px)}
   .hero{min-height:auto}
   .hero-inner{width:calc(100% - 40px);padding:calc(var(--header-h) + 40px) 0 72px}
